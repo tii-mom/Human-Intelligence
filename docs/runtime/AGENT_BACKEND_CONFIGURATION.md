@@ -1,8 +1,10 @@
 # Agent Backend Configuration
 
-## V1.1 Source
+## Current Source
 
-The complete v1.1 memory, Cloudflare backend boundary, read model, command model, and event model contract is defined in `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+The current V1.2 robot cultivation, IU awakening, active work limit, and Master Brain rules are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
+The detailed v1.1 memory, Cloudflare backend boundary, read model, command model, and event model contract remains defined in `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
 
 ## Purpose
 
@@ -74,6 +76,9 @@ agents_local_state(
   owner_id TEXT NOT NULL,
   display_name TEXT NOT NULL,
   status TEXT NOT NULL,
+  growth_stage TEXT,
+  active_work_status TEXT,
+  master_brain_id TEXT,
   last_interaction_at TEXT,
   last_compression_at TEXT,
   memory_version INTEGER NOT NULL DEFAULT 0
@@ -119,6 +124,22 @@ scheduled_jobs(
   next_run_at TEXT,
   status TEXT NOT NULL
 );
+
+agent_task_threads(
+  id TEXT PRIMARY KEY,
+  owner_id TEXT NOT NULL,
+  master_brain_id TEXT,
+  assigned_agent_id TEXT NOT NULL,
+  objective TEXT NOT NULL,
+  expected_output TEXT,
+  iu_budget REAL,
+  status TEXT NOT NULL,
+  progress_json TEXT,
+  blocker_json TEXT,
+  result_ref TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
 ```
 
 ## D1 Global Indexes
@@ -133,6 +154,11 @@ agents(
   owner_id TEXT NOT NULL,
   display_name TEXT NOT NULL,
   agent_type TEXT NOT NULL,
+  acquisition_type TEXT,
+  activation_status TEXT NOT NULL DEFAULT 'young',
+  growth_stage TEXT,
+  is_free_claim BOOLEAN NOT NULL DEFAULT 0,
+  master_brain_id TEXT,
   primary_role TEXT,
   level INTEGER NOT NULL DEFAULT 0,
   certificate_status TEXT NOT NULL,
@@ -199,6 +225,39 @@ notification_preferences(
   quiet_hours_json TEXT,
   PRIMARY KEY(user_id, agent_id, channel)
 );
+
+user_agent_limits(
+  user_id TEXT PRIMARY KEY,
+  free_agent_claimed BOOLEAN NOT NULL DEFAULT 0,
+  active_working_agent_count INTEGER NOT NULL DEFAULT 0,
+  active_working_agent_limit INTEGER NOT NULL DEFAULT 50,
+  master_brain_required BOOLEAN NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL
+);
+
+limited_agent_activations(
+  agent_id TEXT PRIMARY KEY,
+  owner_id TEXT NOT NULL,
+  collection_id TEXT NOT NULL,
+  edition_number INTEGER NOT NULL,
+  sealed_state TEXT NOT NULL,
+  awakening_cost_iu REAL NOT NULL,
+  awakened_at TEXT,
+  reveal_payload_ref TEXT,
+  created_at TEXT NOT NULL
+);
+
+iu_energy_budgets(
+  agent_id TEXT PRIMARY KEY,
+  owner_id TEXT NOT NULL,
+  available_iu REAL NOT NULL,
+  daily_limit_iu REAL,
+  model_token_budget INTEGER,
+  api_scope_json TEXT,
+  low_energy_threshold_iu REAL,
+  status TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
 ```
 
 At large scale, D1 should be sharded by tenant or agent id range.
@@ -219,6 +278,9 @@ agents/{agentId}/core/MEMORY.md
 agents/{agentId}/core/RISK.md
 agents/{agentId}/core/SCORECARD.md
 agents/{agentId}/core/SERVICES.md
+agents/{agentId}/core/EVOLUTION.md
+agents/{agentId}/core/ENERGY.md
+agents/{agentId}/core/TASKS.md
 
 agents/{agentId}/system/STATE.json
 agents/{agentId}/system/STORAGE_MANIFEST.json
@@ -326,6 +388,10 @@ An agent is active when one of these happened recently:
 - report generation
 - risk event
 - service purchase
+- limited agent awakening
+- task thread progress
+- Master Brain orchestration
+- IU energy usage
 
 ## Communication Gateway
 
@@ -348,6 +414,52 @@ Telegram should use bot deep links or Telegram login for binding and webhooks fo
 WeChat should use Official Account or Mini Program binding. Proactive messages must follow WeChat platform rules, so app inbox and daily digests should be used when push is limited.
 
 At least one bound channel is required before an agent becomes active.
+
+## V1.2 User and Agent Limits
+
+Required limits:
+
+- each user can claim only one free Blank Agent
+- users can hold unlimited limited agents
+- limited agents must be awakened with IU before full values are revealed
+- one user can have at most 50 active working agents
+- more than 5 active working agents requires one Master Brain
+- the Master Brain counts as one active working agent
+- every active working agent must have an IU energy budget
+
+The backend should enforce these limits at command validation time.
+
+Do not rely on frontend-only checks.
+
+## Master Brain Task Threads
+
+When a user has more than 5 active working agents, all new work should route through the Master Brain unless the command is a direct emergency or account action.
+
+The Master Brain creates task threads with:
+
+- user goal
+- assigned agent
+- objective
+- expected output
+- IU budget
+- status
+- progress
+- blocker
+- risk notes
+- result reference
+
+Task thread events should be queryable by web, Telegram, WeChat, and mobile clients.
+
+Worker agents should not spam the user.
+
+The Master Brain summarizes progress and escalates only:
+
+- blocker
+- risk warning
+- low IU energy
+- user confirmation needed
+- task completion
+- daily digest
 
 ## Model Routing
 

@@ -4,13 +4,15 @@
 
 HI Protocol is an AI agent cultivation economy for user-owned financial agents.
 
-Users claim a free blank agent, own it as a unique digital entity, and activate its capabilities by installing skills. The agent grows through skill loadouts, memory, reputation, risk discipline, and operating history.
+Each user can claim one free blank agent, own it as a unique digital entity, and activate its capabilities by installing skills. The agent grows through skill loadouts, memory, reputation, risk discipline, and operating history.
 
 The purpose of buying agents with HI and training agents with IU is to create measurable user value: better USDC outcomes, lower avoidable losses, useful IU service income, and stronger agent reputation.
 
 Agents should become sharper through focused skills, not overloaded with unlimited active skills.
 
-Users may also acquire limited edition agents through HI. Limited agents are scarce base agents with distinctive personalities, visual identity, role bias, initial skill slots, or special growth paths. They should be treated as agent archetypes, not promises of higher investment returns.
+Users may also acquire unlimited limited edition agents through HI. Limited agents are scarce base agents with distinctive personalities, visual identity, role bias, initial skill slots, or special growth paths. They remain sealed or dormant until the user spends IU to awaken them and reveal their full stats.
+
+IU is the agent energy layer. Agents consume IU to awaken, learn skills, call APIs, spend model tokens, compress memory, produce reports, coordinate with other agents, and complete work.
 
 HI Protocol is not a follower product.
 HI Protocol is not a generic trading dashboard.
@@ -26,6 +28,10 @@ It is a system where users build their own automated trading agents instead of r
 
 - Free blank agent claim
 - Limited edition agents purchased with HI
+- IU-powered awakening, training, API access, model token usage, memory, and work
+- Pet-style robot growth, evolution, and scorecards
+- Master Brain orchestration when more than 5 robots work at once
+- Maximum 50 active working robots per user
 - Unique user-owned agent identity
 - Skill-based capability activation
 - Financial role system mapped from human finance jobs into specialized agents
@@ -110,6 +116,7 @@ The system model:
 ## Core Documents
 
 - `docs/README.md`
+- `docs/prd/HI_PRODUCT_SPEC_V1_2.md`
 - `docs/prd/HI_PRODUCT_SPEC_V1_1.md`
 - `MVP_PRODUCT_SPEC.md`
 - `docs/agents/BLANK_AGENT_PRODUCT_LOOP.md`

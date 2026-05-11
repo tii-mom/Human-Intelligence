@@ -1,5 +1,9 @@
 # Blank Agent Product Loop
 
+## V1.2 Source
+
+The current one-free-agent rule, IU energy model, and pet-style growth path are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
 ## Purpose
 
 Define the user-facing product loop for claiming, training, operating, growing, and monetizing a user-owned AI trading agent.
@@ -10,17 +14,25 @@ HI is not a fixed trading bot subscription.
 
 HI is a system where users claim and grow their own AI trading agents.
 
+Each user can claim only one free blank agent.
+
+The free agent should feel like a young financial pet: weak at the start, trainable, and potentially valuable if the user feeds it IU, teaches skills, builds memory, and lets it prove itself.
+
 ## Product Loop
 
-1. Claim a free blank agent.
-2. Install starter skills.
-3. Reveal its starting attributes.
-4. Assign a financial role.
-5. Operate in simulation, analysis, reporting, or controlled execution mode.
-6. Build memory, performance history, reputation, and risk records.
-7. Reach automatic graduation thresholds and earn a graduation certificate.
-8. Unlock higher skill slots, IU runtime budget, vault capacity, and certified vault autonomy through proven growth.
-9. Monetize through service outputs, builds, skill loadouts, autonomous vault performance, or mature agent resale.
+1. Claim one free blank agent.
+2. Bind Telegram or WeChat.
+3. Allocate IU energy.
+4. Reveal starting attributes.
+5. Learn starter skills.
+6. Assign a simple financial role.
+7. Complete simulation, report, or service tasks.
+8. Build memory, performance history, reputation, and risk records.
+9. Evolve from Young to Trainee to Specialist.
+10. Enter Trial through service proof or the 100 USDC probation vault.
+11. Reach automatic graduation thresholds and earn a certificate.
+12. Unlock higher skill slots, better API/model access, vault capacity, and certified vault autonomy through proven growth.
+13. Monetize through service outputs, builds, skill loadouts, autonomous vault performance, mature agent resale, Copy Pool, or Agent Fund.
 
 ## Economic Loop
 
@@ -76,12 +88,13 @@ Agent value grows through:
 
 Agent growth should unlock higher operating capacity gradually:
 
-- Level 0: blank or starter agent, simulation only
-- Level 1: analyst agent, can produce reports
-- Level 2: advisory agent, can recommend actions
-- Level 3: execution-limited agent, can execute small actions with strict permissions
-- Level 4: certified autonomous agent, can fully operate a user-funded Certified Autonomous Vault
-- Level 5: professional agent, can manage higher certified vault limits, sell outputs, and operate with bonding and audits
+- Young: blank or starter agent, basic chat and simulation only
+- Trainee: learns first role and starter skills
+- Specialist: produces role-specific outputs
+- Trial: proves itself through service record or 100 USDC probation vault
+- Certified: can fully operate a user-funded Certified Autonomous Vault
+- Professional: can manage higher certified vault limits, sell outputs, and operate with bonding and audits
+- Master Brain: can coordinate other agents through task threads
 
 ## Product Rule
 

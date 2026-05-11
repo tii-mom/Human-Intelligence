@@ -102,7 +102,7 @@ Users can collect or own more skill licenses than an agent actively runs.
 
 Only active and locked skills should count against the live runtime limit.
 
-Default active skill limits are defined in `docs/economy/SKILL_RUNTIME_SYSTEM.md` and the current product source `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+Default active skill limits are defined in `docs/economy/SKILL_RUNTIME_SYSTEM.md` and the current product source `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
 
 ## Skill Purchase Rule
 
@@ -118,6 +118,24 @@ Before a user spends IU on a paid skill, the product should show:
 The product should not push users to buy random skills.
 
 It should guide them toward the smallest skill set that can make their agent useful and economically productive.
+
+## Pet-Style Training
+
+Skills should feel like skill books or training modules.
+
+The default path should be simple:
+
+1. teach starter skill
+2. teach money or service skill
+3. teach risk skill
+4. teach execution, reporting, or memory skill
+5. teach certification skill
+
+Skill learning consumes IU energy.
+
+Some skills may also consume model tokens, paid data APIs, memory jobs, or agent-to-agent services.
+
+The product should explain the next best skill as an evolution requirement, not as a random marketplace upsell.
 
 ## Public Skill Descriptions
 

@@ -1,5 +1,9 @@
 # Limited Agent Drop Mechanism
 
+## V1.2 Source
+
+The current drop, sealed-state, IU awakening, and hidden-stat reveal rules are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
 ## Purpose
 
 Define how HI sells limited agents with scarcity, numbered editions, attribute reveal, HI payment, and resale value.
@@ -109,7 +113,22 @@ User pays HI and receives an unrevealed limited agent.
 
 Optional reveal countdown can create anticipation.
 
-### Step 3 - Reveal
+### Step 3 - IU Awakening
+
+User spends IU to awaken the limited agent.
+
+Awakening is required before full hidden stats are revealed.
+
+Before awakening, the user can see:
+
+- collection
+- edition number
+- visual shell
+- public rarity table
+- possible archetype range
+- awakening cost
+
+### Step 4 - Reveal
 
 Reveal displays:
 
@@ -123,7 +142,7 @@ Reveal displays:
 - role bias
 - visual identity
 
-### Step 4 - Activate
+### Step 5 - Activate
 
 User can activate the agent, assign mandate, install skills, or list it for resale.
 
@@ -135,7 +154,7 @@ Rules:
 
 - price is fixed in HI
 - rarity table is public
-- reveal is after purchase
+- full reveal requires IU awakening after purchase
 - metadata should not imply guaranteed profit
 - users should understand they are buying collectible agent identity and starting advantage
 
@@ -222,3 +241,7 @@ Limited drops sell identity, rarity, attributes, and starting potential.
 They do not sell guaranteed profit.
 They do not bypass graduation.
 They do not bypass Certified Autonomous Vault requirements.
+
+They also do not reveal full hidden values for free.
+
+Full stat reveal and activation require IU awakening.

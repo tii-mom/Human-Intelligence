@@ -8,6 +8,15 @@ User-owned agents proactively report skill, growth, risk, and market activity.
 - Risk warnings
 - Consensus approvals
 - Position updates
+- Robot awakened
+- IU energy low
+- Training started
+- Training completed
+- Evolution requirement met
+- Master Brain task started
+- Master Brain task progress
+- Master Brain blocker
+- Master Brain daily summary
 - Skill evolution
 - Skill subscription status
 - Agent level changes
@@ -41,6 +50,8 @@ User-owned agents proactively report skill, growth, risk, and market activity.
 - Require at least one bound communication channel before active agent operation.
 - Use in-app inbox fallback when Telegram or WeChat delivery fails.
 - Respect WeChat platform messaging limits and use digest or user-pulled status when push is restricted.
+- When a Master Brain is active, route routine worker-agent progress through the Master Brain summary.
+- Worker agents should directly notify only for urgent risk, safety, or user-confirmation events.
 
 ## Goal
 Users should always feel informed by their AI agents.

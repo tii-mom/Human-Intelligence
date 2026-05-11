@@ -1,5 +1,9 @@
 # Limited Agent System
 
+## V1.2 Source
+
+The current limited-agent holding, IU awakening, hidden-stat reveal, and activation rules are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
 ## Purpose
 
 Define limited edition agents purchased with HI.
@@ -9,6 +13,14 @@ Define limited edition agents purchased with HI.
 A limited agent is a scarce starting agent identity with distinctive personality, visual identity, role bias, starter slots, or special growth paths.
 
 Limited agents are purchased with HI, not IU.
+
+Users can hold unlimited limited agents.
+
+Limited agents are not fully active immediately after purchase.
+
+They begin as sealed or dormant identities.
+
+Users must spend IU to awaken a limited agent before full values are revealed.
 
 The full drop mechanism is defined in `docs/agents/LIMITED_AGENT_DROP_MECHANISM.md`.
 
@@ -43,6 +55,26 @@ Limited agents can include:
 - unique growth path
 - higher initial reputation visibility
 - collection and resale value
+
+Before IU awakening, a limited agent should show only:
+
+- collection
+- edition number
+- visual shell
+- public rarity table
+- possible archetype range
+- activation cost
+
+After IU awakening, the product reveals:
+
+- full attributes
+- exact Growth Potential
+- attribute caps
+- personality bias
+- role affinity
+- active skill slot profile
+- starter skill bias
+- complete core document workspace
 
 ## Attribute Advantage
 
@@ -93,3 +125,5 @@ Limited agents must not:
 HI captures value through limited agent purchase, premium access, marketplace rights, creator staking, and reputation bonding.
 
 IU remains the runtime currency used by agents after acquisition.
+
+In V1.2, IU also awakens limited agents and powers their training, model token usage, API access, memory, and work.

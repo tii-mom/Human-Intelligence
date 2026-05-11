@@ -2,23 +2,26 @@
 
 ## Latest Product Source
 
-The current source of truth is `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+The current source of truth is `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
 
 Use it first when updating product, frontend, backend, agent, skill, vault, memory, or integration behavior.
 
-V1.1 defines:
+V1.2 defines:
 
-- Agent Role System v1.1
-- Skill Taxonomy v1.1
-- Agent Attribute System v1.1
-- Graduation and Certification v1.1
-- Vault, Fund, and Copy Pool v1.1
-- Memory and Backend Config v1.1
-- Integration Contract for `hi` and `hi-core`
+- one free robot per user
+- unlimited limited robot ownership
+- IU awakening before full limited robot stats are revealed
+- IU as robot energy for skills, model tokens, APIs, memory, and work
+- pet-style robot growth and evolution
+- active skill limits
+- maximum 50 active working robots per user
+- required Master Brain when more than 5 robots work at once
+- Telegram and WeChat progress feedback
 
 ## Product Specs
 
-- `docs/prd/HI_PRODUCT_SPEC_V1_1.md` - current product and integration source
+- `docs/prd/HI_PRODUCT_SPEC_V1_2.md` - current product and robot cultivation source
+- `docs/prd/HI_PRODUCT_SPEC_V1_1.md` - detailed role, skill, vault, memory, and integration reference
 - `docs/prd/HI_PROTOCOL_PRD.md` - module-level PRD
 - `MVP_PRODUCT_SPEC.md` - MVP scope and non-live trading boundary
 - `docs/vision/HI_PROTOCOL_VISION.md` - product vision
@@ -99,11 +102,12 @@ V1.1 defines:
 
 ## Maintenance Rules
 
-- Update `docs/prd/HI_PRODUCT_SPEC_V1_1.md` first when requirements change.
-- Keep subsystem docs consistent with the V1.1 source spec.
+- Update `docs/prd/HI_PRODUCT_SPEC_V1_2.md` first when cultivation, activation, growth, or multi-agent requirements change.
+- Keep subsystem docs consistent with the V1.2 source spec.
 - Do not describe HI as a generic copy-trading dashboard.
 - Do not imply agents control user primary wallets.
 - Describe autonomous trading as scoped Certified Autonomous Vault operation.
 - Treat HI and IU spending as value-seeking behavior: better returns, lower risk, service income, certification, or reputation.
 - Limit active skills so agents stay focused, cheaper to run, and easier to audit.
+- Treat IU as robot energy for awakening, learning, API/model runtime, memory, and work.
 - Keep raw memory archives as source of truth; summaries and vectors are derived indexes.

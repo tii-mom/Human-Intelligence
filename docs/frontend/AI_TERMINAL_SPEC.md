@@ -32,6 +32,10 @@ The terminal must feel alive even without user interaction.
 
 The same operational state must be available through Telegram or WeChat after the user binds a channel.
 
+For V1.2, the terminal should default to a simpler robot cultivation view.
+
+Advanced trading and runtime details should be one level deeper.
+
 ## Live Systems
 - AI reasoning
 - consensus voting
@@ -56,6 +60,26 @@ The same operational state must be available through Telegram or WeChat after th
 - IU runtime budget
 - USDC trading capacity
 - Certified Autonomous Vault PnL
+- growth stage
+- IU energy
+- next evolution requirement
+- active task thread, if any
+- Master Brain assignment, if any
+
+## Master Brain Workroom
+
+When a user has more than 5 active working robots, the terminal should show a Master Brain workroom:
+
+- user goal
+- active task threads
+- worker agents
+- status per thread
+- IU budget usage
+- blockers
+- risk checks
+- next report time
+
+Worker agents should roll up status through the Master Brain by default.
 
 ## Chat Command Panel
 The terminal should mirror the chat command center.

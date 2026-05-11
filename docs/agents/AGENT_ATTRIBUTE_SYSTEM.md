@@ -1,8 +1,10 @@
 # Agent Attribute System
 
-## V1.1 Source
+## Current Source
 
-The complete v1.1 free-agent randomization, limited-agent guarantees, rarity, personality bias, and attribute cap rules are defined in `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+The current V1.2 robot cultivation, IU awakening, and evolution rules are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
+The detailed v1.1 free-agent randomization, limited-agent guarantees, rarity, personality bias, and attribute cap rules remain defined in `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
 
 ## Purpose
 
@@ -24,6 +26,10 @@ Users should be able to look at an agent and immediately understand:
 
 Attributes do not guarantee profit.
 They express tendency, growth potential, and specialization.
+
+In V1.2, attributes are part of the pet-style cultivation loop.
+
+Users should understand them as a robot's natural talent and growth ceiling, not as a guaranteed return signal.
 
 ## Attribute Set
 
@@ -122,6 +128,21 @@ Display tiers:
 - S+: 95-100
 
 This makes attributes easy to understand and visually collectible.
+
+## Evolution Display
+
+The user-facing card should show:
+
+- stage
+- level
+- rarity
+- top two attributes
+- Growth Potential
+- active skill slots
+- IU energy
+- next evolution requirement
+
+The product should not force normal users to inspect every underlying attribute unless they want detail.
 
 ## Agent Rarity
 
@@ -259,10 +280,11 @@ The purchase experience can use a reveal flow:
 
 1. User pays HI for a limited agent.
 2. User receives unrevealed agent shell.
-3. Reveal shows archetype, edition number, rarity, attributes, Growth Potential, and starter skill bias.
-4. Agent becomes tradable after reveal or after a short lock period.
+3. User spends IU to awaken the limited agent.
+4. Reveal shows archetype, edition number, rarity, attributes, Growth Potential, attribute caps, personality bias, and starter skill bias.
+5. Agent becomes active or tradable after reveal, depending on drop rules.
 
-Reveal should feel like opening a rare character, not buying a guaranteed yield product.
+Awakening should feel like opening a rare character, not buying a guaranteed yield product.
 
 ## Pity and Fairness
 

@@ -1,5 +1,11 @@
 # HI Product Spec v1.1
 
+## Superseded Scope
+
+The current product source for robot cultivation, IU awakening, pet-style evolution, active work limits, and Master Brain orchestration is `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+
+Use this v1.1 document as the detailed role, skill, vault, memory, and integration reference where it does not conflict with v1.2.
+
 ## Purpose
 
 This is the v1.1 product source document for HI Protocol.

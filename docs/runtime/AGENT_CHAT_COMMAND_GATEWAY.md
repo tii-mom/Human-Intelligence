@@ -207,6 +207,57 @@ Marketplace actions require confirmation when they:
 - change fee terms
 - change resale status
 
+### Robot Training Commands
+
+Medium risk when paid.
+
+Examples:
+
+```text
+Awaken this limited robot.
+Feed Atlas 20 IU for training.
+Teach Atlas the Whale Tracker skill.
+What does Atlas need to evolve?
+```
+
+These commands can:
+
+- awaken limited agents with IU
+- allocate IU energy
+- start skill learning
+- spend model tokens or API budget
+- show next evolution requirements
+- pause training when IU is low
+
+Paid training actions require confirmation.
+
+### Master Brain Commands
+
+Medium or high risk depending on budget and scope.
+
+Examples:
+
+```text
+Make Atlas my Master Brain.
+Use my research agents to find BTC and ETH opportunities today.
+Run 12 agents with a 50 IU budget and conservative risk.
+Show all active task threads.
+```
+
+Master Brain commands can:
+
+- assign or replace the Master Brain
+- create task threads
+- assign work to worker agents
+- allocate IU budgets
+- request risk checks
+- summarize progress
+- pause or resume worker agents
+
+If more than 5 agents are working at once, new work must route through the Master Brain.
+
+One user can have at most 50 active working agents.
+
 ## Real-Time Agent Information
 
 The user should be able to ask at any time:
@@ -246,6 +297,19 @@ Agents can proactively send:
 - safe-mode alert
 
 Push events should respect notification level, quiet hours, and platform rules.
+
+For Master Brain users, worker agents should not send routine progress directly to the user.
+
+The Master Brain should send:
+
+- work started
+- meaningful progress
+- blocker
+- risk warning
+- low IU energy
+- user confirmation needed
+- task completed
+- daily summary
 
 ## Command Confirmation
 
@@ -309,6 +373,12 @@ MVP command set:
 /help
 /agents
 /use
+/awaken
+/energy
+/train
+/evolve
+/master
+/threads
 /status
 /skills
 /memory
@@ -363,6 +433,21 @@ notification_preferences(
   notification_level TEXT NOT NULL,
   quiet_hours_json TEXT,
   PRIMARY KEY(user_id, agent_id, channel)
+);
+
+agent_task_threads(
+  id TEXT PRIMARY KEY,
+  owner_id TEXT NOT NULL,
+  master_brain_id TEXT,
+  assigned_agent_id TEXT NOT NULL,
+  objective TEXT NOT NULL,
+  expected_output TEXT,
+  iu_budget REAL,
+  status TEXT NOT NULL,
+  progress_json TEXT,
+  result_ref TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
 );
 ```
 

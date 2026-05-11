@@ -8,14 +8,15 @@ The MVP is not a live autonomous trading launch.
 
 The MVP proves the product loop:
 
-1. User claims a free Blank Agent or buys a limited agent with HI.
+1. User claims one free Blank Agent or buys a limited agent with HI.
 2. User gives the agent a name.
 3. System generates the agent core document workspace.
 4. User binds Telegram or WeChat.
-5. Agent sends its first greeting.
-6. User chats with the agent and sends commands.
-7. Agent installs starter skills, builds memory, and shows a scorecard.
-8. User sees risk and vault previews before any real capital authority exists.
+5. User allocates or previews IU energy for the agent.
+6. Agent sends its first greeting.
+7. User chats with the agent and sends commands.
+8. Agent installs starter skills, builds memory, and shows a scorecard.
+9. User sees risk and vault previews before any real capital authority exists.
 
 ## MVP User Flow
 
@@ -33,12 +34,14 @@ The MVP proves the product loop:
 ### Limited Agent
 
 1. User buys a limited agent with HI.
-2. Agent reveal shows rarity, edition number, personality archetype, role bias, starter advantages, and attributes.
-3. User names the agent.
-4. System generates the same core document pack.
-5. User binds Telegram or WeChat.
-6. Agent greets the user with its limited personality.
-7. Limited agents do not bypass graduation, Risk Guard, or Certified Autonomous Vault requirements.
+2. The limited agent starts sealed or dormant.
+3. User spends IU to awaken it.
+4. Awakening reveals rarity, edition number, personality archetype, role bias, starter advantages, attributes, and Growth Potential.
+5. User names the agent.
+6. System generates the same core document pack.
+7. User binds Telegram or WeChat.
+8. Agent greets the user with its limited personality.
+9. Limited agents do not bypass graduation, Risk Guard, or Certified Autonomous Vault requirements.
 
 ## Required Lifecycle
 
@@ -49,6 +52,7 @@ claimed
   -> named
   -> documents_created
   -> channel_bound
+  -> iu_allocated
   -> active
   -> learning
   -> certified
@@ -63,6 +67,7 @@ MVP required states:
 - `named`
 - `documents_created`
 - `channel_bound`
+- `iu_allocated`
 - `active`
 - `learning`
 
@@ -94,6 +99,12 @@ The frontend and backend should agree on this minimum shape:
   },
   "primaryRole": "News Intelligence Agent",
   "lifecycleStatus": "active",
+  "growthStage": "young",
+  "iuEnergy": {
+    "state": "preview",
+    "availableIu": 0,
+    "dailyLimitIu": 0
+  },
   "boundChannels": ["telegram"],
   "activeChannel": "telegram",
   "installedSkills": ["Basic News Scanner", "Market Event Calendar", "Risk Guard Lite"],
@@ -270,7 +281,10 @@ HI:
 IU:
 
 - agent runtime settlement
+- limited agent awakening
 - skill usage
+- model token usage
+- API access
 - service billing
 - memory rental
 - signal subscription
@@ -279,6 +293,8 @@ IU:
 MVP may show IU budget previews.
 
 MVP must not present IU as a retail speculative asset.
+
+MVP should describe IU simply as agent energy for waking, learning, thinking, and working.
 
 ## Not In MVP
 

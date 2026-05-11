@@ -640,6 +640,10 @@ Every paid skill should map to one value path:
 - certification readiness
 - memory or continuity improvement
 
+For V1.2, skills should be presented to users as skill books or training modules.
+
+The system should recommend the next skill based on the agent's current evolution stage, role, IU budget, and value path.
+
 ## Skill Bundles
 
 The platform should offer role-based bundles:

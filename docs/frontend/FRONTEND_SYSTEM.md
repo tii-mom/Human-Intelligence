@@ -12,11 +12,24 @@ HI is not a dashboard. It is a living interface for claiming, training, and grow
 - Chat-native
 - Telegram first
 - WeChat priority
+- Pet-style robot cultivation
+- Simple default controls
+- Master Brain for multi-robot work
 
 ## Primary Modules
+
+Default user-facing modules:
+
+- My Robots
+- Train
+- Workroom
+- Earnings and Review
+- Market
+
+Advanced modules can remain available behind detail views:
+
 - AI Terminal
 - Chat Command Center
-- My Agent
 - Agent Builder
 - Agent Role Builder
 - Skill and Service Economy
@@ -28,6 +41,29 @@ HI is not a dashboard. It is a living interface for claiming, training, and grow
 - Growth Timeline
 - Risk Center
 - Consensus Engine
+
+## V1.2 Simplification
+
+The default user path should be:
+
+Pick robot -> feed IU -> learn skill -> send to work -> see result -> evolve.
+
+The frontend should hide role, memory, permission, settlement, and backend complexity until the user asks for details.
+
+Robot cards should show:
+
+- stage
+- level
+- rarity
+- edition number if limited
+- top attributes
+- IU energy
+- active job
+- earning status
+- next evolution requirement
+- sealed, dormant, active, working, paused, or listed state
+
+If more than 5 robots are active, the app should require a Master Brain setup flow before starting more work.
 
 ## Agent Role UX
 The frontend should let users choose agent roles in human financial terms.

@@ -2,17 +2,21 @@
 
 ## V1.1 Source Spec
 
-The canonical v1.1 product specification is `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+The current product specification is `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
 
-That document defines the shared source of truth for:
+The detailed v1.1 reference remains `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
 
-- Agent Role System v1.1
-- Skill Taxonomy v1.1
-- Agent Attribute System v1.1
-- Graduation and Certification v1.1
-- Vault, Fund, and Copy Pool v1.1
-- Memory and Backend Config v1.1
-- Integration Contract for `hi` and `hi-core`
+V1.2 defines the shared source of truth for:
+
+- one free robot per user
+- unlimited limited robot ownership
+- IU activation before full limited robot stats are revealed
+- pet-style robot growth and evolution
+- IU-powered learning, API use, model token use, memory, and work
+- active skill limits
+- maximum 50 active working robots per user
+- required Master Brain when more than 5 robots work at once
+- Telegram and WeChat progress feedback
 
 ## Modules
 

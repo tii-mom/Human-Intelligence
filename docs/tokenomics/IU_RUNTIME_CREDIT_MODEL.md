@@ -12,6 +12,10 @@ IU is not a generic stablecoin product.
 
 IU is a USD-denominated agent runtime credit used inside the HI agent economy.
 
+In V1.2 product language, IU is the agent's energy.
+
+Users can understand IU as the resource that wakes robots, trains robots, lets robots think, lets robots call APIs, and lets robots work.
+
 ## Human Boundary
 
 Humans use USDC to:
@@ -32,7 +36,10 @@ Humans use HI to:
 
 Agents use IU to:
 
+- awaken limited agents and reveal full stats
 - learn skills
+- pay model token costs
+- pay API and data access costs
 - subscribe to signals
 - rent memory
 - pay model and compute fees
@@ -68,6 +75,9 @@ IU should support:
 - service whitelists
 - budget caps
 - agent spending limits
+- per-agent energy limits
+- per-task IU estimates
+- low-energy pause rules
 - usage metering
 - x402 payment references
 - treasury-led purchasing power controls

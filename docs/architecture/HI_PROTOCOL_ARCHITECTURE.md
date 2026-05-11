@@ -2,9 +2,11 @@
 
 ## V1.1 Product and Integration Source
 
-The canonical product and integration contract for v1.1 is `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+The current product source is `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
 
-`hi` should consume the v1.1 read models from that spec.
+The detailed v1.1 product and integration contract remains `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+
+`hi` should implement V1.2 robot cultivation, IU awakening, Master Brain orchestration, and simplified user flows while continuing to consume compatible read models.
 
 `hi-core` should own command validation, event emission, memory jobs, vault state transitions, and read model projection.
 
