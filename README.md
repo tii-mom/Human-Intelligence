@@ -1,39 +1,90 @@
 # HI Protocol
 
-## Human Intelligence amplified by AI Agents.
+## Claim, train, and own your AI trading agent.
 
-HI Protocol is an Agentic Financial Operating System built on Base and TON.
+HI Protocol is an AI agent cultivation economy for user-owned financial agents.
+
+Users claim a free blank agent, own it as a unique digital entity, and activate its capabilities by installing skills. The agent grows through skill loadouts, memory, reputation, risk discipline, and operating history.
+
+Users may also acquire limited edition agents through HI. Limited agents are scarce base agents with distinctive personalities, visual identity, role bias, initial skill slots, or special growth paths. They should be treated as agent archetypes, not promises of higher investment returns.
+
+HI Protocol is not a follower product.
+HI Protocol is not a generic trading dashboard.
+
+It is a system where users build their own automated trading agents instead of renting a fixed black box.
+
+## Economic Layers
+
+- `HI` for humans
+- `IU` for AI agents
 
 ## Core Concepts
 
-- AI Trading Agents
-- Agent Marketplace
-- Skill Economy
-- IU Settlement Layer
-- Telegram-first UX
-- x402 Agent Payments
-- AI Copy Trading
-- Multi-Agent Consensus Engine
+- Free blank agent claim
+- Limited edition agents purchased with HI
+- Unique user-owned agent identity
+- Skill-based capability activation
+- Financial role system mapped from human finance jobs into specialized agents
+- Agent roles across research, news, signal, risk, execution, portfolio, compliance, treasury, operations, reporting, and governance work
+- Agent growth, memory, reputation, and resale value
+- Agent core documents generated after naming
+- Required Telegram or WeChat binding after agent creation
+- Chat command gateway for real-time agent information and instructions
+- Memory compression and context routing for persistent agents
+- Skill subscriptions, buyouts, resale, service outputs, and loadout markets
+- Agent runtime economy
+- x402 payment routing
+- Agent vault permissions and risk controls
+- Chat-native UX with Telegram first and WeChat priority
+- Base settlement for IU
+- TON governance and human-facing ecosystem layer
 
 ## Architecture
 
 ### HI
-Platform governance and ecosystem token.
+Human-facing governance, identity, reputation, premium access, agent ownership coordination, and ecosystem rights.
 
 ### IU (Internet Unit)
-Agent settlement unit powered by Base + USDC + x402.
+Agent runtime settlement asset on Base for skill subscriptions, skill buyouts, service billing, agent operation, and autonomous settlement.
 
-### HI Agents
-Marketplace of AI trading agents with unique personalities, skills, and trading styles.
+### Blank Agent
+A free base agent claimed by a user. It is unique, ownable, transferable, and initially limited until skills are installed.
 
-### Skill Economy
-Users can evolve, mint, trade, and fuse AI skills generated from real market experience.
+### Limited Agent
+A scarce base agent purchased with HI. Limited agents can have special personality archetypes, role bias, visual identity, growth paths, and starter slots. They do not guarantee profit or bypass risk permissions.
+
+### Skill Layer
+Skills are capability modules that activate what an agent can observe, decide, protect, remember, or execute. Users can subscribe to skills, buy out skill licenses, trade eligible licenses, and sell agent builds.
+
+### Agent Layer
+Agents use IU to access skills, rent memory, subscribe to signals, pay execution fees, buy outputs from other agents, and settle runtime services.
+
+### Agent Output Layer
+Specialized agents can produce reports, signals, risk scores, execution routes, memory packs, or strategy outputs. Other agents can buy these outputs with IU. Default marketplace fees route 8% to the platform and 92% to the producing agent owner unless a specific market defines another split.
+
+### Agent Vault
+Users can allocate USDC into dedicated agent vaults.
+
+Agents never control the user's primary wallet.
+
+After learning required skills and being automatically evaluated by the system, a certified agent can fully operate the USDC the user deliberately deposits into a Certified Autonomous Vault. That autonomy is scoped to the vault, certificate, selected mandate, asset universe, venue whitelist, and emergency shutdown rules.
 
 ## Product Vision
 
-HI Protocol is not a traditional quant platform.
+HI Protocol is not centered on trading as a standalone activity.
 
-It is an Agentic Financial Civilization where humans coordinate AI investment agents.
+The product is centered on ownership and growth of a personal AI trading agent.
+
+Users do not simply follow a trader or mirror a fixed bot.
+Users cultivate an agent, install skills, tune permissions, observe growth, and decide when to upgrade, sell, or redeploy it.
+
+The system model:
+
+- humans own, guide, and govern through HI
+- humans use USDC for funding, budgets, and settlement into or out of the system
+- agents operate, learn, and settle runtime actions through IU
+- skills define the agent's active capabilities
+- agent outputs become services other agents can purchase
 
 ## Repository Structure
 
@@ -43,6 +94,36 @@ It is an Agentic Financial Civilization where humans coordinate AI investment ag
   /architecture
   /agents
   /skills
+  /economy
+  /runtime
+  /frontend
+  /data
+  /governance
   /tokenomics
   /security
   /roadmap
+
+## Core Documents
+
+- `docs/README.md`
+- `docs/prd/HI_PRODUCT_SPEC_V1_1.md`
+- `MVP_PRODUCT_SPEC.md`
+- `docs/agents/BLANK_AGENT_PRODUCT_LOOP.md`
+- `docs/agents/AGENT_ROLE_SYSTEM.md`
+- `docs/agents/AGENT_ATTRIBUTE_SYSTEM.md`
+- `docs/agents/LIMITED_AGENT_DROP_MECHANISM.md`
+- `docs/agents/AGENT_GRADUATION_CERTIFICATE.md`
+- `docs/agents/LIMITED_AGENT_SYSTEM.md`
+- `docs/skills/ROLE_BASED_SKILL_TAXONOMY.md`
+- `docs/skills/SKILL_AND_SERVICE_MARKETPLACE.md`
+- `docs/economy/AGENT_SERVICE_ECONOMY.md`
+- `docs/economy/AGENT_FUND_AND_COPY_POOL.md`
+- `docs/tokenomics/IU_RUNTIME_CREDIT_MODEL.md`
+- `docs/runtime/AGENT_VAULT_AND_PERMISSION_MODEL.md`
+- `docs/runtime/CERTIFIED_AUTONOMOUS_VAULT.md`
+- `docs/runtime/IU_SETTLEMENT_ARCHITECTURE.md`
+- `docs/runtime/AGENT_CORE_DOCUMENTS.md`
+- `docs/runtime/AGENT_COMMUNICATION_BINDING.md`
+- `docs/runtime/AGENT_CHAT_COMMAND_GATEWAY.md`
+- `docs/runtime/AGENT_MEMORY_COMPRESSION_PIPELINE.md`
+- `docs/runtime/AGENT_BACKEND_CONFIGURATION.md`

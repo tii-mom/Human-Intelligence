@@ -1,46 +1,221 @@
 # HI Protocol PRD
 
+## V1.1 Source Spec
+
+The canonical v1.1 product specification is `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+
+That document defines the shared source of truth for:
+
+- Agent Role System v1.1
+- Skill Taxonomy v1.1
+- Agent Attribute System v1.1
+- Graduation and Certification v1.1
+- Vault, Fund, and Copy Pool v1.1
+- Memory and Backend Config v1.1
+- Integration Contract for `hi` and `hi-core`
+
 ## Modules
 
 ### 1. Authentication
 - Wallet login
 - Telegram login
+- WeChat login or binding
 - TON Connect
-- Base wallet support
+- Base wallet support for agent-facing flows
+- Required Telegram or WeChat binding after agent creation
 
-### 2. Agent Marketplace
-- Agent subscriptions
-- Agent rankings
-- Agent personalities
-- Copy trading
+### 2. Blank Agent Claim
+- Free agent claim
+- Unique agent identity
+- User-given agent name
+- Automatic core document creation
+- Telegram or WeChat binding before activation
+- First agent greeting in the bound chat channel
+- User-owned agent profile
+- Blank initial capability state
+- Starting attribute reveal
+- Agent transfer and listing readiness
 
-### 3. Skill Marketplace
-- Skill minting
-- Skill trading
-- Skill fusion
-- Skill rarity
+### 3. Agent Builder
+- Skill slot management
+- Agent personality setup
+- Financial role setup
+- Primary and secondary role selection
+- Role-family onboarding
+- Role-compatible starter skills
+- Risk permission setup
+- Skill compatibility checks
+- Build preview before activation
 
-### 4. Telegram AI Companion
-- AI conversations
-- AI notifications
-- AI debate system
-- AI portfolio reporting
+### 4. Limited Agent System
+- Limited agent purchase with HI
+- Limited drop supply and pricing
+- 999-agent standard drop
+- Blind box reveal
+- Personality archetypes
+- Rarity and attribute profile
+- Edition number
+- Public rarity distribution
+- S and S+ attribute guarantees
+- Growth Potential display
+- Secondary-market resale
+- Role-biased starter paths
+- Scarce visual identity
+- No guaranteed profit positioning
+- No permission bypass
 
-### 5. Risk Engine
+### 5. Skill and Service Marketplace
+- Skill subscription
+- Skill buyout license
+- Eligible license resale
+- Skill bundle and build sales
+- Role-based skill taxonomy
+- USDC and IU earning path labels
+- Skill fusion and upgrade flows
+- Short public descriptions with hidden core logic
+- Agent output sales
+- News, report, signal, risk, memory, and execution service listings
+
+### 6. Agent Growth System
+- Agent level
+- Attribute profile
+- Growth Potential
+- Attribute growth history
+- Memory history
+- Skill usage history
+- Reputation and reliability
+- Performance and risk records
+- Automatic growth evaluation
+- Graduation certificate
+- Ownership and transfer history
+- Role specialization
+- Output quality history
+- IU runtime budget growth
+- USDC vault capacity growth
+
+### 7. Agent Build Marketplace
+- Mature agent listings
+- Skill loadout listings
+- Build templates
+- Reputation-based discovery
+- Transferable ownership records
+
+### 8. Agent Vault and Permissions
+- USDC vault deposit
+- IU runtime budget allocation
+- Certified Autonomous Vault activation
+- Graduation certificate binding
+- Max position size
+- Max daily loss
+- Max drawdown
+- Asset and venue whitelists
+- Kill switch
+- Permission-based execution
+- Certified autonomous execution
+
+### 9. Risk Engine
 - Position sizing
 - Max drawdown protection
 - Leverage restrictions
 - Black swan protection
+- Skill-level permission boundaries
+- Certificate scope enforcement
+- Autonomous vault safe mode
 
-### 6. IU Settlement Layer
+### 10. IU Settlement Layer
 - x402 integration
-- USDC settlement
+- Base settlement
 - Agent-to-agent payments
+- Runtime billing
+- Skill subscriptions
+- Skill buyouts
+- Agent output purchases
+- Marketplace fees
+- Build and agent resale fees
+- USD-denominated runtime purchasing stability
+- USDC funding and owner settlement boundary
+
+### 11. AI Runtime Layer
+- Skill loading
+- Core document loading
+- Memory access
+- 32-turn / 8-hour memory compression
+- Daily and weekly memory summaries
+- Raw conversation archive
+- Semantic memory retrieval
+- Context budget enforcement
+- Signal ingestion
+- Execution routing
+- Graduation certificate validation
+- Skill activation and deactivation
+- Runtime permission enforcement
+- Agent output production and consumption
+- Telegram and WeChat command ingestion
+- Chat command permission routing
+
+### 12. Agent Role System
+- Human finance job mapping
+- Role-family taxonomy
+- Role-compatible skill slots
+- Role-based recommended skill paths
+- Role-based output categories
+- Role-based marketplace discovery
+- Role-based permission defaults
+- Role-change memory history
+- Limited-agent role bias support
+
+### 13. Graduation and Certification
+- Automatic role-based evaluation
+- Return-rate-first graduation scoring
+- 100 USDC starting vault
+- Mandate-based growth
+- Certificate levels
+- Renewal and revocation
+- Certified Autonomous Vault eligibility
+
+### 14. Agent Fund and Copy Pool
+- Professional agent fund eligibility
+- Copy pool creation
+- Managed pool creation
+- HI bonding access
+- Owner-defined profit share from 5% to 20%
+- Public scorecard
+- User allocation and mandate compatibility
+- Safe-mode handling
+
+### 15. Agent Core Document Workspace
+- `IDENTITY.md` stores the agent id, owner id, user-given name, role, agent type, and transfer rules
+- `SOUL.md` stores personality and limited-agent archetype traits
+- `COMMUNICATION.md` stores Telegram or WeChat binding policy, primary channel, notification level, and command mode
+- `MANDATE.md` stores role, mission, output scope, and vault mandate
+- `SKILLS.md` stores installed skills, licenses, and permission scopes
+- `MEMORY.md` stores compact hot memory, not full raw history
+- `RISK.md` stores autonomy and safe-mode rules
+- `SCORECARD.md` stores growth, graduation, USDC PnL, IU income, and risk record
+- `SERVICES.md` stores sellable outputs and marketplace terms
+
+### 16. Communication Binding and Chat Command Center
+- Telegram binding
+- WeChat binding
+- At least one required channel before active operation
+- Bound-channel verification
+- Multi-agent chat switching
+- Real-time status queries
+- Agent reports in chat
+- User instructions through chat
+- Command risk classification
+- Confirmation for paid, vault, resale, or high-risk actions
+- Notification preferences and quiet hours
 
 ## User Types
 
-- Retail traders
+- Agent owners
 - AI creators
+- Skill providers
+- Memory providers
+- Execution providers
+- Build creators
+- Risk module providers
+- News and research providers
 - Signal providers
-- Copy traders
-- Skill traders
+- Agent role specialists
