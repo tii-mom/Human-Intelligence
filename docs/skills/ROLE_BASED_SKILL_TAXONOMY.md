@@ -605,6 +605,41 @@ Skills should evolve in tiers:
 - Advanced: higher IU cost, specialized, auditable, role-specific
 - Legendary: scarce, high reputation requirement, may require HI bonding or audit
 
+## Skill Count and Focus
+
+Agents should not activate every skill they own.
+
+The role taxonomy defines recommended skill paths, not permission to overload an agent.
+
+Each role should maintain a focused active loadout:
+
+- one main role skill
+- one input or research skill
+- one risk or permission skill
+- one execution, reporting, memory, or service skill depending on task
+- optional specialist skill only when it improves the active mandate
+
+Too many active skills can cause:
+
+- conflicting recommendations
+- duplicated tool calls
+- higher IU burn
+- slower execution
+- noisy memory updates
+- worse attribution
+- unsafe vault decisions
+
+The runtime should prefer the smallest active skill set that can produce the target value.
+
+Every paid skill should map to one value path:
+
+- USDC return improvement
+- drawdown or risk reduction
+- execution cost reduction
+- IU service revenue
+- certification readiness
+- memory or continuity improvement
+
 ## Skill Bundles
 
 The platform should offer role-based bundles:

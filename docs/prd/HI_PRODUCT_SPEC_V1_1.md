@@ -19,6 +19,23 @@ The product is not a generic copy-trading dashboard, not a black-box bot rental 
 
 Users own agents, install skills, grow memory, set risk lines, fund dedicated vaults, and decide when an agent is ready for larger capital.
 
+The reason a user spends HI or IU is not to collect complexity.
+
+The reason is to build an agent that can create measurable value:
+
+- pursue USDC-denominated portfolio gains inside approved vault limits
+- reduce avoidable losses through better risk control
+- earn IU by selling useful outputs or services to other agents
+- grow into a more valuable agent identity through verified performance, memory, reputation, and certification
+
+HI buys or bonds human-facing ownership, scarce identity, access, reputation, and ecosystem rights.
+
+IU pays for agent learning, runtime skills, data, services, execution support, memory, and agent-to-agent outputs.
+
+Every paid action should answer one question:
+
+Does this make the agent more likely to produce user value?
+
 Agents never control the user's primary wallet.
 
 Certified agents can fully operate only the USDC deliberately placed into a Certified Autonomous Vault, and only inside the certificate, mandate, asset, venue, and risk boundaries selected by the user.
@@ -28,6 +45,9 @@ Certified agents can fully operate only the USDC deliberately placed into a Cert
 - Every agent has one primary role and optional secondary roles.
 - Role defines default skill paths, output markets, permission defaults, and certification tracks.
 - Skills define active capabilities and permissions. Attributes do not grant permissions.
+- Skill growth is value-driven, not quantity-driven.
+- Agents can own many skill licenses, but only a limited number of skills can be active in a live runtime context.
+- Too many active skills can create prompt bloat, tool conflict, higher IU burn, slower decisions, unclear responsibility, and worse trading behavior.
 - Graduation and certification are automatic system evaluations, not human approvals.
 - The initial live trading proving ground is a 100 USDC probation vault.
 - Users cannot arbitrarily interrupt a live Certified Autonomous Vault while it is executing unless a pre-set user risk line is triggered.
@@ -136,6 +156,19 @@ The role map should feel familiar to humans who understand financial institution
 
 ## 2. Skill Taxonomy v1.1
 
+### Skill Purpose
+
+The skill system should behave like a professional training and tooling system, not an infinite inventory.
+
+A skill is worth installing only if it improves at least one measurable path:
+
+- USDC value: better return, lower drawdown, better execution, better risk discipline, or better capital efficiency
+- IU value: better sellable outputs, higher buyer retention, stronger marketplace reputation, or lower service production cost
+- Certification value: clearer proof that the agent can safely handle a larger mandate or vault scope
+- Memory value: better continuity, less repeated work, and better adaptation to the user or market regime
+
+If a skill does not improve one of these paths, it should be treated as cosmetic, educational, or low-priority.
+
 ### Skill Tier Definitions
 
 | Tier | Purpose | Default price | Default permissions | Learning result | Can other agents buy it |
@@ -162,6 +195,84 @@ The role map should feel familiar to humans who understand financial institution
 | `treasury_budget_control` | Manage IU runtime budget caps and service spending | Low IU or service fee | Better IU efficiency | Yes, as budget report |
 | `vault_config_write` | Change vault config before activation or after risk trigger | User confirmation required | Safer vault setup | No |
 | `fund_or_pool_admin` | Operate Agent Fund, Copy Pool, or Signal Pool settings | Professional fee plus HI bonding when required | Fund readiness and public track record | No |
+
+### Skill Slot and Activation Rules
+
+V1.1 should limit the number of skills active at the same time.
+
+This is a product and safety requirement, not just a UX simplification.
+
+An agent may own many skill licenses, but runtime should separate:
+
+- owned skills: licenses the owner or agent has access to
+- installed skills: skills attached to the agent build
+- active skills: skills loaded for the current role, task, or vault decision
+- locked certification skills: skills required by a certificate or vault mandate
+
+Default active skill limits:
+
+| Agent level | Active skill slots | Locked safety slots | Notes |
+| --- | --- | --- | --- |
+| L0 Blank | 2 | 0 | Basic onboarding only |
+| L1 Research/Service | 3 | 0-1 | Can produce simple outputs |
+| L2 Advisory | 4 | 1 | Must include basic risk or permission awareness for financial advice |
+| L3 Probation | 5 | 1-2 | 100 USDC vault requires Risk Guard and execution boundary |
+| L4 Certified | 6 | 2 | Certified vault requires role skill plus risk/control skill |
+| L5 Professional | 8 | 2-3 | Fund/copy pool agents can coordinate more specialists |
+
+Recommended active loadout shape:
+
+- one primary role skill
+- one market or research input skill
+- one risk/control skill
+- one execution or service skill when needed
+- one memory or reporting skill when useful
+- optional specialist skill only if it improves the current mandate
+
+Skills should be loaded by task.
+
+A vault decision should not load every reporting, personality, education, governance, or marketplace skill.
+
+A report task should not load execution skills unless the report needs execution attribution.
+
+The runtime should reject or warn on loadouts that:
+
+- exceed active slot limits
+- include duplicate skills with overlapping authority
+- combine contradictory strategy styles
+- install execution skills without Risk Guard
+- increase IU burn without measurable expected value
+- degrade context budget or decision latency
+- create unclear responsibility between portfolio, risk, and execution agents
+
+### Skill ROI Rule
+
+Every paid skill should expose a simple expected value thesis before purchase:
+
+```json
+{
+  "skillId": "skl_...",
+  "valueThesis": "reduces execution slippage for active vault trades",
+  "expectedValuePath": "USDC",
+  "measurementWindow": "30d",
+  "primaryMetric": "execution_cost_saved_usdc",
+  "secondaryMetric": "iu_cost_per_use",
+  "deactivationRule": "disable if IU cost exceeds estimated value for 30 days"
+}
+```
+
+Skill ROI can be measured through:
+
+- incremental return contribution
+- drawdown reduction
+- slippage reduction
+- avoided risk events
+- service revenue generated
+- buyer retention
+- report quality score
+- IU cost per useful output
+
+The product should encourage users to upgrade toward a sharper agent, not a heavier one.
 
 ### Role-to-Skill Matrix
 
@@ -1004,4 +1115,3 @@ V1.1 event types:
 - Professional agents can create Copy Pools, Signal Pools, or Agent Funds with HI bonding when required.
 - Memory uses hot memory, daily summaries, raw archives, and vector memory.
 - `hi` and `hi-core` use the v1.1 read, command, and event model.
-

@@ -13,6 +13,14 @@ The economic purpose of skills is twofold:
 - help agents pursue USDC-denominated user portfolio gains inside approved vault limits
 - help agents earn IU by producing outputs and services other agents buy
 
+The user buys or spends into skills because they expect the agent to become more valuable.
+
+That value should be measurable as better returns, lower drawdown, better execution, useful service revenue, stronger certification readiness, or higher agent resale/reputation value.
+
+Skills are not meant to become an unlimited inventory game.
+
+An agent should become sharper, not heavier.
+
 ## Skill Types
 
 - Intelligence and research skills
@@ -69,6 +77,47 @@ Agents can:
 - sell outputs to other agents
 - spend earned IU on further skills or services
 - use skills to improve USDC trading and portfolio decisions under permission limits
+
+## Skill Count Boundary
+
+HI should limit active skills per agent.
+
+The limit protects:
+
+- decision quality
+- context budget
+- runtime cost
+- execution speed
+- risk control clarity
+- role specialization
+
+The system should distinguish:
+
+- owned skill licenses
+- installed skills in the agent build
+- active skills loaded for the current task
+- locked safety or certification skills
+
+Users can collect or own more skill licenses than an agent actively runs.
+
+Only active and locked skills should count against the live runtime limit.
+
+Default active skill limits are defined in `docs/economy/SKILL_RUNTIME_SYSTEM.md` and the current product source `docs/prd/HI_PRODUCT_SPEC_V1_1.md`.
+
+## Skill Purchase Rule
+
+Before a user spends IU on a paid skill, the product should show:
+
+- what value path the skill supports: USDC, IU, certification, or memory
+- what metric should improve
+- what role the skill fits
+- whether it can be bought by other agents as an output
+- how much IU it may burn
+- when the system should recommend pausing or removing it
+
+The product should not push users to buy random skills.
+
+It should guide them toward the smallest skill set that can make their agent useful and economically productive.
 
 ## Public Skill Descriptions
 

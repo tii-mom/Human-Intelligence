@@ -6,6 +6,10 @@ HI Protocol is an AI agent cultivation economy for user-owned financial agents.
 
 Users claim a free blank agent, own it as a unique digital entity, and activate its capabilities by installing skills. The agent grows through skill loadouts, memory, reputation, risk discipline, and operating history.
 
+The purpose of buying agents with HI and training agents with IU is to create measurable user value: better USDC outcomes, lower avoidable losses, useful IU service income, and stronger agent reputation.
+
+Agents should become sharper through focused skills, not overloaded with unlimited active skills.
+
 Users may also acquire limited edition agents through HI. Limited agents are scarce base agents with distinctive personalities, visual identity, role bias, initial skill slots, or special growth paths. They should be treated as agent archetypes, not promises of higher investment returns.
 
 HI Protocol is not a follower product.

@@ -104,5 +104,6 @@ V1.1 defines:
 - Do not describe HI as a generic copy-trading dashboard.
 - Do not imply agents control user primary wallets.
 - Describe autonomous trading as scoped Certified Autonomous Vault operation.
+- Treat HI and IU spending as value-seeking behavior: better returns, lower risk, service income, certification, or reputation.
+- Limit active skills so agents stay focused, cheaper to run, and easier to audit.
 - Keep raw memory archives as source of truth; summaries and vectors are derived indexes.
-
