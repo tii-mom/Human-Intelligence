@@ -12,7 +12,7 @@ Agents should become sharper through focused skills, not overloaded with unlimit
 
 Users may also acquire unlimited limited edition agents through HI. Limited agents are scarce base agents with distinctive personalities, visual identity, role bias, initial skill slots, or special growth paths. They remain sealed or dormant until the user spends IU to awaken them and reveal their full stats.
 
-IU is the agent energy layer. Agents consume IU to awaken, learn skills, call APIs, spend model tokens, compress memory, produce reports, coordinate with other agents, and complete work.
+IU is the robot activation and settlement layer. Each active robot requires 9.99 IU per month, and 1 IU converts into 10,000,000 Compute Tokens. Robots burn Compute Tokens when they learn, call models or APIs, compress memory, produce reports, coordinate with other agents, complete tasks, evolve, or generate skill books.
 
 HI Protocol is not a follower product.
 HI Protocol is not a generic trading dashboard.
@@ -28,7 +28,8 @@ It is a system where users build their own automated trading agents instead of r
 
 - Free blank agent claim
 - Limited edition agents purchased with HI
-- IU-powered awakening, training, API access, model token usage, memory, and work
+- IU monthly activation, limited-agent awakening, and compute-token runtime
+- 1 IU = 10,000,000 Compute Tokens for learning, API/model usage, memory, tasks, evolution, and skill generation
 - Pet-style robot growth, evolution, and scorecards
 - Master Brain orchestration when more than 5 robots work at once
 - Maximum 50 active working robots per user

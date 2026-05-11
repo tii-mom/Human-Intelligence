@@ -57,7 +57,8 @@ The Durable Object owns:
 - active schedule ids
 - compression counters
 - latest core doc versions
-- current IU budget snapshot
+- current IU activation and settlement snapshot
+- current Compute Token budget snapshot
 - current vault mode snapshot
 - memory lock during compression
 - bound communication channel snapshot
@@ -132,7 +133,7 @@ agent_task_threads(
   assigned_agent_id TEXT NOT NULL,
   objective TEXT NOT NULL,
   expected_output TEXT,
-  iu_budget REAL,
+  compute_token_budget INTEGER,
   status TEXT NOT NULL,
   progress_json TEXT,
   blocker_json TEXT,
@@ -247,16 +248,28 @@ limited_agent_activations(
   created_at TEXT NOT NULL
 );
 
-iu_energy_budgets(
+agent_runtime_accounts(
   agent_id TEXT PRIMARY KEY,
   owner_id TEXT NOT NULL,
-  available_iu REAL NOT NULL,
-  daily_limit_iu REAL,
-  model_token_budget INTEGER,
+  monthly_activation_status TEXT NOT NULL,
+  monthly_activation_iu REAL NOT NULL DEFAULT 9.99,
+  monthly_activation_renews_at TEXT,
+  compute_token_balance INTEGER NOT NULL DEFAULT 0,
+  daily_compute_token_limit INTEGER,
   api_scope_json TEXT,
-  low_energy_threshold_iu REAL,
+  low_compute_threshold INTEGER,
   status TEXT NOT NULL,
   updated_at TEXT NOT NULL
+);
+
+iu_compute_conversions(
+  id TEXT PRIMARY KEY,
+  owner_id TEXT NOT NULL,
+  agent_id TEXT,
+  iu_amount REAL NOT NULL,
+  compute_tokens INTEGER NOT NULL,
+  conversion_rate INTEGER NOT NULL DEFAULT 10000000,
+  created_at TEXT NOT NULL
 );
 ```
 
@@ -391,7 +404,7 @@ An agent is active when one of these happened recently:
 - limited agent awakening
 - task thread progress
 - Master Brain orchestration
-- IU energy usage
+- IU activation or Compute Token usage
 
 ## Communication Gateway
 
@@ -425,7 +438,8 @@ Required limits:
 - one user can have at most 50 active working agents
 - more than 5 active working agents requires one Master Brain
 - the Master Brain counts as one active working agent
-- every active working agent must have an IU energy budget
+- every active working agent must have active monthly activation
+- every active working agent must have a Compute Token budget
 
 The backend should enforce these limits at command validation time.
 
@@ -441,7 +455,7 @@ The Master Brain creates task threads with:
 - assigned agent
 - objective
 - expected output
-- IU budget
+- Compute Token budget
 - status
 - progress
 - blocker
@@ -456,7 +470,7 @@ The Master Brain summarizes progress and escalates only:
 
 - blocker
 - risk warning
-- low IU energy
+- low Compute Token balance
 - user confirmation needed
 - task completion
 - daily digest
@@ -476,9 +490,9 @@ Recommended routing:
 | Vault action reasoning | strongest approved model plus risk checks |
 | Monthly memory review | long-context model or offline batch |
 
-Free agents should have a daily free chat budget.
+Active monthly robots should include normal daily chat.
 
-Skill tasks, report generation, trading analysis, and vault work should consume IU or user-approved service budget.
+Skill tasks, report generation, trading analysis, self-learning, evolution, skill generation, and vault work should consume Compute Tokens or user-approved service budget.
 
 ## Context Policy Defaults
 
@@ -531,7 +545,7 @@ Recommended approach:
 4. Vectorize partitioned by scope and metadata.
 5. Queues for all compression and embedding jobs.
 6. Rate limits per user, per agent, and per model tier.
-7. Hard token budgets for every task type.
+7. Hard Compute Token budgets for every task type.
 8. Inactive agent hibernation.
 
 ## Inactive Agent Hibernation

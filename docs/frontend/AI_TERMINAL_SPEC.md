@@ -23,7 +23,8 @@ RIGHT:
 - execution layer
 - license and permission status
 - graduation certificate status
-- IU runtime budget
+- IU activation and settlement state
+- Compute Token runtime budget
 - USDC vault capacity
 - Certified Autonomous Vault status
 
@@ -57,11 +58,11 @@ Advanced trading and runtime details should be one level deeper.
 - permission level
 - Risk Guard state
 - graduation certificate scope
-- IU runtime budget
+- IU activation and settlement state
 - USDC trading capacity
 - Certified Autonomous Vault PnL
 - growth stage
-- IU energy
+- Compute Token balance
 - next evolution requirement
 - active task thread, if any
 - Master Brain assignment, if any
@@ -74,7 +75,7 @@ When a user has more than 5 active working robots, the terminal should show a Ma
 - active task threads
 - worker agents
 - status per thread
-- IU budget usage
+- Compute Token budget usage
 - blockers
 - risk checks
 - next report time

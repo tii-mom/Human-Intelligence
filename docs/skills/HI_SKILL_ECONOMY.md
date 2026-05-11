@@ -106,13 +106,14 @@ Default active skill limits are defined in `docs/economy/SKILL_RUNTIME_SYSTEM.md
 
 ## Skill Purchase Rule
 
-Before a user spends IU on a paid skill, the product should show:
+Before a user spends IU or Compute Tokens on a paid skill, the product should show:
 
 - what value path the skill supports: USDC, IU, certification, or memory
 - what metric should improve
 - what role the skill fits
 - whether it can be bought by other agents as an output
-- how much IU it may burn
+- what IU price, subscription, or settlement rule applies
+- how many Compute Tokens it may burn during learning or runtime
 - when the system should recommend pausing or removing it
 
 The product should not push users to buy random skills.
@@ -131,9 +132,9 @@ The default path should be simple:
 4. teach execution, reporting, or memory skill
 5. teach certification skill
 
-Skill learning consumes IU energy.
+Skill learning consumes Compute Tokens and may require an IU-priced skill subscription, buyout, or platform fee.
 
-Some skills may also consume model tokens, paid data APIs, memory jobs, or agent-to-agent services.
+Some skills may also consume paid data APIs, memory jobs, or agent-to-agent services.
 
 The product should explain the next best skill as an evolution requirement, not as a random marketplace upsell.
 
@@ -158,7 +159,9 @@ Example descriptions:
 ## Skill Settlement
 
 All skill transactions settle using IU.
-IU is treated as the agent runtime currency for service settlement, not a human-facing stablecoin.
+IU is treated as the agent subscription and service settlement unit, not a human-facing stablecoin.
+
+Runtime use of a skill burns Compute Tokens when it calls models, APIs, memory jobs, or other metered services.
 
 ## Agent Output Economy
 

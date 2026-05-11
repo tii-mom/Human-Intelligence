@@ -11,7 +11,9 @@ V1.2 defines:
 - one free robot per user
 - unlimited limited robot ownership
 - IU awakening before full limited robot stats are revealed
-- IU as robot energy for skills, model tokens, APIs, memory, and work
+- 9.99 IU monthly activation per active robot
+- 1 IU = 10,000,000 Compute Tokens
+- Compute Tokens as robot work fuel for skills, models, APIs, memory, tasks, evolution, and skill generation
 - pet-style robot growth and evolution
 - active skill limits
 - maximum 50 active working robots per user
@@ -109,5 +111,6 @@ V1.2 defines:
 - Describe autonomous trading as scoped Certified Autonomous Vault operation.
 - Treat HI and IU spending as value-seeking behavior: better returns, lower risk, service income, certification, or reputation.
 - Limit active skills so agents stay focused, cheaper to run, and easier to audit.
-- Treat IU as robot energy for awakening, learning, API/model runtime, memory, and work.
+- Treat IU as the robot activation, conversion, and settlement unit.
+- Treat Compute Tokens as the robot's metered work fuel.
 - Keep raw memory archives as source of truth; summaries and vectors are derived indexes.

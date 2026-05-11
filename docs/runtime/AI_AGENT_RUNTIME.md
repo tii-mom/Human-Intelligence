@@ -15,7 +15,8 @@ Define the lifecycle and operational runtime of user-owned AI agents.
 - Memory persistence
 - Risk authority
 - Execution permissions
-- IU runtime budget
+- IU activation and service settlement
+- Compute Token runtime budget
 - USDC vault capacity
 - Agent output production
 - Agent output consumption
@@ -61,7 +62,8 @@ The communication channel is where the agent sends real-time information and rec
 
 ## Budget Rule
 The runtime must separate:
-- IU spending for skills, services, model calls, memory, signals, risk modules, and execution routing
+- IU spending for activation, skill access, service settlement, and agent-to-agent purchases
+- Compute Token spending for model calls, API calls, memory jobs, tasks, self-learning, evolution, and skill generation
 - USDC vault capacity for trading or portfolio actions
 
 An agent can recommend higher budgets, but user approval and risk checks are required before increasing vault capacity or certificate scope.

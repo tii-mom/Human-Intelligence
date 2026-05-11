@@ -59,7 +59,8 @@ Can return:
 - role
 - current mode
 - skills
-- IU budget
+- monthly activation state
+- Compute Token balance and budget
 - memory status
 - scorecard
 - vault mode
@@ -78,7 +79,7 @@ What did the news agent find?
 Give me a weekly trend report.
 ```
 
-If the report consumes premium model calls, paid data, or external services, it should show IU cost before execution.
+If the report consumes premium model calls, paid data, or external services, it should show estimated Compute Token cost before execution.
 
 ### Skill Commands
 
@@ -100,7 +101,7 @@ Skill commands can:
 - renew subscriptions
 - show license status
 
-Skill purchase or renewal should require confirmation when it spends IU or HI.
+Skill purchase or renewal should require confirmation when it spends IU, HI, or a high Compute Token amount.
 
 ### Instruction Commands
 
@@ -202,6 +203,7 @@ These can affect IU spending, IU income, or public listings.
 Marketplace actions require confirmation when they:
 
 - spend IU
+- spend high Compute Token amounts
 - list an output publicly
 - expose transferable memory
 - change fee terms
@@ -215,7 +217,8 @@ Examples:
 
 ```text
 Awaken this limited robot.
-Feed Atlas 20 IU for training.
+Activate Atlas for this month.
+Convert 20 IU into Compute Tokens.
 Teach Atlas the Whale Tracker skill.
 What does Atlas need to evolve?
 ```
@@ -223,11 +226,13 @@ What does Atlas need to evolve?
 These commands can:
 
 - awaken limited agents with IU
-- allocate IU energy
+- renew monthly activation
+- convert IU into Compute Tokens
+- allocate Compute Tokens
 - start skill learning
-- spend model tokens or API budget
+- spend model, API, memory, or task budget
 - show next evolution requirements
-- pause training when IU is low
+- pause training when Compute Tokens are low
 
 Paid training actions require confirmation.
 
@@ -240,7 +245,7 @@ Examples:
 ```text
 Make Atlas my Master Brain.
 Use my research agents to find BTC and ETH opportunities today.
-Run 12 agents with a 50 IU budget and conservative risk.
+Run 12 agents with a 500,000,000 Compute Token budget and conservative risk.
 Show all active task threads.
 ```
 
@@ -249,7 +254,7 @@ Master Brain commands can:
 - assign or replace the Master Brain
 - create task threads
 - assign work to worker agents
-- allocate IU budgets
+- allocate Compute Token budgets
 - request risk checks
 - summarize progress
 - pause or resume worker agents
@@ -289,7 +294,7 @@ Agents can proactively send:
 - market alert
 - risk alert
 - skill learning update
-- IU budget alert
+- Compute Token budget alert
 - USDC PnL update
 - service purchase notice
 - output sale notice
@@ -306,7 +311,7 @@ The Master Brain should send:
 - meaningful progress
 - blocker
 - risk warning
-- low IU energy
+- low Compute Token balance
 - user confirmation needed
 - task completed
 - daily summary
@@ -340,6 +345,8 @@ For high-impact actions:
 
 - spend HI
 - spend high IU amount
+- convert IU into Compute Tokens
+- spend high Compute Token amount
 - buy limited agent
 - install paid skill
 - change vault capacity
@@ -374,7 +381,7 @@ MVP command set:
 /agents
 /use
 /awaken
-/energy
+/compute
 /train
 /evolve
 /master
@@ -442,7 +449,7 @@ agent_task_threads(
   assigned_agent_id TEXT NOT NULL,
   objective TEXT NOT NULL,
   expected_output TEXT,
-  iu_budget REAL,
+  compute_token_budget INTEGER,
   status TEXT NOT NULL,
   progress_json TEXT,
   result_ref TEXT,

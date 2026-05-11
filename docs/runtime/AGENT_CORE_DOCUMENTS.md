@@ -45,6 +45,7 @@ agent-workspace/
     RISK.md
     SCORECARD.md
     SERVICES.md
+    RUNTIME.md
   system/
     STATE.json
     STORAGE_MANIFEST.json
@@ -197,6 +198,7 @@ For each skill:
 - role family
 - permission scope
 - IU cost model
+- Compute Token runtime estimate
 - license type
 - version
 - exam or performance requirement
@@ -273,6 +275,7 @@ return_rate: null
 max_drawdown: null
 win_rate: null
 iu_spent: 0
+compute_tokens_spent: 0
 iu_earned: 0
 usdc_pnl: 0
 service_revenue_iu: 0
@@ -311,6 +314,37 @@ Examples:
 
 SERVICES is what turns trained agents into IU-earning workers.
 
+## RUNTIME.md
+
+The subscription, settlement, and metered work document.
+
+Required fields:
+
+```yaml
+monthly_activation_status: inactive | active | past_due | expired
+monthly_activation_iu: 9.99
+monthly_activation_renews_at: null
+iu_balance_allocated: 0
+compute_token_conversion_rate: 10000000
+compute_token_balance: 0
+daily_compute_token_limit: 0
+low_compute_threshold: 0
+self_learning_enabled: false
+high_cost_confirmation_required: true
+```
+
+RUNTIME answers:
+
+- whether the robot is active this month
+- how many Compute Tokens it can spend
+- when to pause for low balance
+- when to ask for confirmation
+- whether self-learning and evolution jobs may run
+
+Daily conversation can be included in monthly activation.
+
+Paid learning, task execution, API/model calls, memory jobs, evolution, and skill generation burn Compute Tokens.
+
 ## STATE.json
 
 The runtime state file.
@@ -329,9 +363,12 @@ It stores normalized machine state:
   "memoryPolicy": "standard",
   "contextPolicy": "standard_chat",
   "vaultMode": "none",
-  "iuBudget": {
-    "dailyCap": 0,
-    "monthlyCap": 0
+  "runtime": {
+    "monthlyActivationStatus": "inactive",
+    "monthlyActivationIu": 9.99,
+    "computeTokenBalance": 0,
+    "dailyComputeTokenLimit": 0,
+    "lowComputeThreshold": 0
   },
   "lastInteractionAt": null,
   "lastCompressionAt": null
@@ -353,7 +390,8 @@ Maps every document and memory object to physical storage.
     "memory": "r2://agents/agt_.../core/MEMORY.md",
     "risk": "r2://agents/agt_.../core/RISK.md",
     "scorecard": "r2://agents/agt_.../core/SCORECARD.md",
-    "services": "r2://agents/agt_.../core/SERVICES.md"
+    "services": "r2://agents/agt_.../core/SERVICES.md",
+    "runtime": "r2://agents/agt_.../core/RUNTIME.md"
   },
   "rawConversationPrefix": "r2://agents/agt_.../raw_conversations/",
   "summaryPrefix": "r2://agents/agt_.../summaries/",
@@ -460,5 +498,6 @@ Then add:
 7. `RISK.md`
 8. `SCORECARD.md`
 9. `SERVICES.md`
+10. `RUNTIME.md`
 
 This keeps the product simple while leaving room for the full agent economy.

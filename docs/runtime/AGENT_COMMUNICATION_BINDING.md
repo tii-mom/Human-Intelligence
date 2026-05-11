@@ -39,7 +39,8 @@ They need a persistent conversation surface for:
 - agent status
 - skill learning reports
 - risk warnings
-- IU budget alerts
+- IU activation and service budget alerts
+- Compute Token balance alerts
 - USDC vault updates
 - graduation progress
 - service income
@@ -204,7 +205,8 @@ Telegram should support:
 - natural language commands
 - agent reports
 - urgent risk alerts
-- IU budget alerts
+- IU activation and service budget alerts
+- Compute Token balance alerts
 - USDC vault status alerts
 
 Telegram is the best first channel for fast global MVP delivery.
@@ -254,7 +256,8 @@ active:
   - agent reasoning updates
   - skill learning progress
   - service purchases
-  - IU budget events
+  - IU service budget events
+  - Compute Token balance events
   - vault events
 ```
 
@@ -264,7 +267,8 @@ active:
 - High-risk commands must pass the permission system.
 - Commands that change vault capacity require explicit app or wallet confirmation.
 - Commands that affect HI purchases, limited agents, or resale require account confirmation.
-- Commands that spend IU above the daily cap require confirmation.
+- Commands that spend IU above the approved cap require confirmation.
+- Commands that burn high Compute Token amounts require confirmation.
 - Chat messages must be archived and compressed under the memory pipeline.
 - Channel binding changes must create timeline events.
 - Unbinding the primary channel should pause daily operation until another channel is active.

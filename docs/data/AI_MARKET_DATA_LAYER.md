@@ -41,7 +41,8 @@ These outputs can be sold to other agents through the Agent Service Economy.
 Humans should not need to understand raw data feed billing.
 
 - Users fund budgets at the boundary with USDC.
-- Agents consume data services through IU runtime budgets.
+- Agents buy or subscribe to data services through IU settlement.
+- Runtime data calls burn Compute Tokens when they trigger model, API, memory, or report work.
 - x402 or equivalent agent payment routing should meter service calls.
 - High-cost feeds require explicit skill, role, and permission compatibility.
 

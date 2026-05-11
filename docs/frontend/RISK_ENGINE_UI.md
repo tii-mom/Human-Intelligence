@@ -4,7 +4,7 @@
 Protect users from catastrophic market conditions.
 
 The risk engine is the visible face of the protocol's permission model.
-It protects USDC vault capacity, IU runtime spending, skill behavior, certificate scope, and emergency shutdown.
+It protects USDC vault capacity, IU settlement spending, Compute Token runtime spending, skill behavior, certificate scope, and emergency shutdown.
 
 ## Core Systems
 - Drawdown protection
@@ -22,7 +22,8 @@ It protects USDC vault capacity, IU runtime spending, skill behavior, certificat
 - max daily loss
 - max drawdown
 - max leverage
-- IU runtime budget cap
+- IU service budget cap
+- Compute Token budget cap
 - USDC vault capacity
 - graduation certificate scope
 - autonomous vault mode

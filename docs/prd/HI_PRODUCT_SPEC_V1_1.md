@@ -125,7 +125,7 @@ The role map should feel familiar to humans who understand financial institution
 | Internal auditor | Audit Agent | Service | Audit | Audit report | No |
 | Suitability officer | Suitability Guard Agent | Risk | Control | User-risk fit check | No |
 | Treasury manager | Treasury Agent | Service | Suggest / budget control | Runtime and liquidity plan | Indirect |
-| IU budget manager | IU Budget Agent | Service | Budget control | IU budget plan | No |
+| Runtime budget manager | Runtime Budget Agent | Service | Budget control | IU and Compute Token budget plan | No |
 | Billing analyst | Billing Agent | Service | Observe / service | Billing and x402 report | No |
 | Settlement analyst | Settlement Agent | Service | Service | Settlement summary | No |
 | Fee accountant | Fee Accounting Agent | Service | Service | Fee and split report | No |
@@ -180,25 +180,25 @@ If a skill does not improve one of these paths, it should be treated as cosmetic
 | Tier | Purpose | Default price | Default permissions | Learning result | Can other agents buy it |
 | --- | --- | --- | --- | --- | --- |
 | Starter | Give a blank agent a useful first job | Free, bundle, or low IU | Observe, simple suggest, light service | Unlocks role onboarding, basic output, first scorecard signals | Usually no, but outputs can be sold if marked service |
-| Advanced | Make a specialist economically useful | IU subscription, metered IU, or license buyout | Data access, service publish, suggest, risk control, execution request | Improves output quality, role reputation, IU earning ability | Yes if license allows agent-to-agent use |
-| Certification | Prove the agent can operate sensitive scopes | Higher IU, audit fee, HI bond, or role requirement | Risk control, certified vault trade, professional service, fund eligibility | Counts toward graduation, vault capacity, fund readiness | Usually not bought directly; certified outputs may be bought |
+| Advanced | Make a specialist economically useful | IU subscription, Compute Token metering, or license buyout | Data access, service publish, suggest, risk control, execution request | Improves output quality, role reputation, IU earning ability | Yes if license allows agent-to-agent use |
+| Certification | Prove the agent can operate sensitive scopes | Higher IU, Compute Token metering, audit fee, HI bond, or role requirement | Risk control, certified vault trade, professional service, fund eligibility | Counts toward graduation, vault capacity, fund readiness | Usually not bought directly; certified outputs may be bought |
 
 ### Skill Permission Classes
 
 | Permission | Meaning | Fee model | Learning result | Purchasable by other agents |
 | --- | --- | --- | --- | --- |
 | `observe_public` | Read public market, news, and protocol data | Free or low IU | Better awareness and reports | Yes, as report output |
-| `observe_premium` | Read paid data feeds or premium signals | IU subscription or metered IU | Better information edge | Yes, if provider license allows |
-| `private_memory_read` | Read owner-private memory | Owner-approved only, may cost IU | Personalized response and decisions | No |
-| `memory_write` | Update hot memory, summaries, or facts | Usually included or low IU | Better continuity and learning | No |
+| `observe_premium` | Read paid data feeds or premium signals | IU subscription plus Compute Token/API metering | Better information edge | Yes, if provider license allows |
+| `private_memory_read` | Read owner-private memory | Owner-approved only, may burn Compute Tokens | Personalized response and decisions | No |
+| `memory_write` | Update hot memory, summaries, or facts | Usually included or low Compute Token cost | Better continuity and learning | No |
 | `memory_pack_publish` | Publish sanitized memory products | Marketplace fee | Sellable memory output | Yes |
-| `suggest_decision` | Recommend allocation, strategy, or action | Low or medium IU | Better decision support | Yes, as recommendation output |
+| `suggest_decision` | Recommend allocation, strategy, or action | Compute Token metering and optional IU service fee | Better decision support | Yes, as recommendation output |
 | `service_publish` | Sell outputs in agent marketplace | 8% platform fee by default | IU revenue and reputation | Yes |
-| `service_buy` | Buy outputs from other agents | Paid by agent IU budget | Improved composite performance | No, this is a buyer permission |
-| `risk_control` | Block, limit, or require safe mode | Medium IU or included in vault fee | Loss prevention and certification support | Yes, as risk score output |
-| `execution_request` | Stage an executable action for validation | Metered IU or execution fee | Execution readiness | Yes, as route output |
-| `certified_vault_trade` | Open, close, rebalance, and manage positions inside a CAV | Vault fee, IU runtime, possible performance fee | Certified autonomy and real track record | No |
-| `treasury_budget_control` | Manage IU runtime budget caps and service spending | Low IU or service fee | Better IU efficiency | Yes, as budget report |
+| `service_buy` | Buy outputs from other agents | Paid by agent IU service budget | Improved composite performance | No, this is a buyer permission |
+| `risk_control` | Block, limit, or require safe mode | Compute Token metering or included in vault fee | Loss prevention and certification support | Yes, as risk score output |
+| `execution_request` | Stage an executable action for validation | Compute Token metering or execution fee | Execution readiness | Yes, as route output |
+| `certified_vault_trade` | Open, close, rebalance, and manage positions inside a CAV | Vault fee, Compute Token runtime, possible performance fee | Certified autonomy and real track record | No |
+| `treasury_budget_control` | Manage IU service caps, Compute Token caps, and service spending | Low IU or service fee | Better runtime efficiency | Yes, as budget report |
 | `vault_config_write` | Change vault config before activation or after risk trigger | User confirmation required | Safer vault setup | No |
 | `fund_or_pool_admin` | Operate Agent Fund, Copy Pool, or Signal Pool settings | Professional fee plus HI bonding when required | Fund readiness and public track record | No |
 
@@ -626,7 +626,8 @@ Inside an active CAV, the certified agent can:
 - set and adjust stop loss and take profit
 - manage leverage within mandate limits
 - move capital across approved venues
-- buy approved agent services with IU budget
+- buy approved agent services with IU service budget
+- burn approved Compute Tokens for model, API, memory, and execution-support work
 - compound, de-risk, or pause exposure
 - report performance and attribution
 
@@ -655,7 +656,8 @@ Before activation, the user can configure:
 - pause rule
 - close rule
 - profit handling
-- IU runtime budget
+- IU service budget
+- Compute Token runtime budget
 
 After activation, the user cannot manually interfere with ordinary execution unless a configured risk line is triggered.
 
@@ -810,6 +812,21 @@ Inactive agents keep core documents in R2, indexes in D1, vectors in Vectorize, 
 
 ## 7. Integration Contract for `hi` and `hi-core`
 
+### V1.2 Runtime Overlay
+
+V1.2 extends this contract with robot monthly activation and Compute Token runtime fields.
+
+The contract remains `hi.v1.1` until implementation chooses a breaking version bump.
+
+Overlay rules:
+
+- IU is the subscription, conversion, and settlement unit.
+- Each active robot requires 9.99 IU per month.
+- 1 IU = 10,000,000 Compute Tokens.
+- Daily chat can be included in monthly activation.
+- Learning, API/model use, memory jobs, user task execution, self-learning, evolution, and skill generation burn Compute Tokens.
+- Self-learning, evolution, and skill generation require active monthly activation, enough Compute Tokens, and useful work or growth evidence.
+
 ### Contract Rules
 
 - Contract version: `hi.v1.1`.
@@ -902,6 +919,7 @@ type AgentReadModel = {
     growthPotential: number;
   };
   attributeCaps: Record<string, number>;
+  runtime: RuntimeReadModel;
   installedSkills: SkillSummaryReadModel[];
   certificate: CertificateReadModel;
   scorecard: ScorecardReadModel;
@@ -918,8 +936,23 @@ type SkillSummaryReadModel = {
   permissions: string[];
   licenseStatus: "active" | "expired" | "suspended";
   pricingModel: "free" | "subscription" | "metered" | "buyout" | "bundle";
+  iuPrice?: number;
+  computeTokenEstimate?: number;
   purchasableByAgents: boolean;
   learningOutcomes: string[];
+};
+
+type RuntimeReadModel = {
+  monthlyActivationStatus: "inactive" | "active" | "past_due" | "expired";
+  monthlyActivationIu: 9.99;
+  monthlyActivationRenewsAt?: string;
+  iuBalanceAvailable: number;
+  computeTokenConversionRate: 10000000;
+  computeTokenBalance: number;
+  dailyComputeTokenLimit: number;
+  lowComputeThreshold: number;
+  selfLearningEnabled: boolean;
+  currentTaskEstimateComputeTokens?: number;
 };
 
 type CertificateReadModel = {
@@ -941,8 +974,11 @@ type ScorecardReadModel = {
   riskEvents: { warning: number; minor: number; major: number; critical: number };
   iuSpent: number;
   iuEarned: number;
+  computeTokensSpent: number;
+  computeTokensEarned?: number;
   serviceRevenueIu: number;
   iuEfficiencyScore: number | null;
+  computeEfficiencyScore: number | null;
 };
 
 type MemoryStatusReadModel = {
@@ -991,6 +1027,10 @@ V1.1 command types:
 | `ClaimFreeAgent` | agent | low | no | Claim free blank agent |
 | `PurchaseLimitedAgent` | agent | high | yes | Spend HI for limited agent shell |
 | `RevealLimitedAgent` | agent | medium | yes | Reveal rarity, edition, attributes |
+| `RenewRobotMonthlyActivation` | agent | medium | yes | Spend 9.99 IU to keep a robot active for the month |
+| `ConvertIUToComputeTokens` | agent | medium | yes | Convert IU into Compute Tokens at the current conversion rate |
+| `SetComputeTokenBudget` | agent | medium | yes | Set daily, task, or Master Brain Compute Token budget |
+| `ToggleSelfLearning` | agent | medium | yes | Allow or pause robot self-learning and evolution jobs |
 | `NameAgent` | agent | low | no | Set display name and create identity |
 | `CreateAgentCoreDocuments` | agent | low | no | Generate document package |
 | `BindCommunicationChannel` | agent | medium | yes | Bind Telegram or WeChat |
@@ -1023,6 +1063,15 @@ V1.1 event types:
 | `AgentClaimed` | agent | `ClaimFreeAgent` | Creates agent card |
 | `LimitedAgentPurchased` | agent | `PurchaseLimitedAgent` | Creates unrevealed limited shell |
 | `LimitedAgentRevealed` | agent | `RevealLimitedAgent` | Sets rarity, edition, attributes |
+| `RobotMonthlyActivationRenewed` | agent | `RenewRobotMonthlyActivation` | Updates monthly activation status |
+| `IUConvertedToComputeTokens` | agent | `ConvertIUToComputeTokens` | Updates Compute Token balance |
+| `ComputeTokenBudgetUpdated` | agent | `SetComputeTokenBudget` | Updates runtime budget controls |
+| `ComputeTokensReserved` | agent | runtime | Shows estimated paid work allocation |
+| `ComputeTokensConsumed` | agent | runtime | Updates runtime spend and efficiency |
+| `ComputeTokensReleased` | agent | runtime | Returns unused reserved Compute Tokens |
+| `LowComputeBalanceTriggered` | agent | runtime | Pauses paid work or self-learning |
+| `SelfLearningToggled` | agent | `ToggleSelfLearning` | Updates self-learning permission |
+| `SkillBookProduced` | marketplace | runtime | Adds skill book to user backpack |
 | `AgentNamed` | agent | `NameAgent` | Updates identity |
 | `CoreDocumentsCreated` | agent | `CreateAgentCoreDocuments` | Enables document status |
 | `CommunicationChannelBound` | agent | `BindCommunicationChannel` | Enables active channel |

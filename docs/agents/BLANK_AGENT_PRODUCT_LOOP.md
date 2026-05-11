@@ -2,7 +2,7 @@
 
 ## V1.2 Source
 
-The current one-free-agent rule, IU energy model, and pet-style growth path are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
+The current one-free-agent rule, IU activation model, Compute Token runtime, and pet-style growth path are defined in `docs/prd/HI_PRODUCT_SPEC_V1_2.md`.
 
 ## Purpose
 
@@ -16,23 +16,24 @@ HI is a system where users claim and grow their own AI trading agents.
 
 Each user can claim only one free blank agent.
 
-The free agent should feel like a young financial pet: weak at the start, trainable, and potentially valuable if the user feeds it IU, teaches skills, builds memory, and lets it prove itself.
+The free agent should feel like a young financial pet: weak at the start, trainable, and potentially valuable if the user activates it, gives it Compute Tokens for real work, teaches skills, builds memory, and lets it prove itself.
 
 ## Product Loop
 
 1. Claim one free blank agent.
 2. Bind Telegram or WeChat.
-3. Allocate IU energy.
-4. Reveal starting attributes.
-5. Learn starter skills.
-6. Assign a simple financial role.
-7. Complete simulation, report, or service tasks.
-8. Build memory, performance history, reputation, and risk records.
-9. Evolve from Young to Trainee to Specialist.
-10. Enter Trial through service proof or the 100 USDC probation vault.
-11. Reach automatic graduation thresholds and earn a certificate.
-12. Unlock higher skill slots, better API/model access, vault capacity, and certified vault autonomy through proven growth.
-13. Monetize through service outputs, builds, skill loadouts, autonomous vault performance, mature agent resale, Copy Pool, or Agent Fund.
+3. Activate the agent with 9.99 IU/month.
+4. Allocate Compute Tokens for paid work.
+5. Reveal starting attributes.
+6. Learn starter skills.
+7. Assign a simple financial role.
+8. Complete simulation, report, or service tasks.
+9. Build memory, performance history, reputation, and risk records.
+10. Evolve from Young to Trainee to Specialist.
+11. Enter Trial through service proof or the 100 USDC probation vault.
+12. Reach automatic graduation thresholds and earn a certificate.
+13. Unlock higher skill slots, better API/model access, vault capacity, and certified vault autonomy through proven growth.
+14. Monetize through service outputs, builds, skill loadouts, autonomous vault performance, mature agent resale, Copy Pool, or Agent Fund.
 
 ## Economic Loop
 

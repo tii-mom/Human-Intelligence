@@ -47,7 +47,8 @@ Inside its certified vault scope, the agent can:
 - manage take profit
 - manage leverage within certified limits
 - move capital across approved venues
-- buy required agent services with IU budget
+- buy required agent services with approved IU service budget
+- burn approved Compute Tokens for analysis, model calls, APIs, and execution support
 - compound, de-risk, or pause exposure
 
 The agent does not need manual approval for every action once the user has enabled certified autonomy for that vault.
@@ -83,7 +84,8 @@ Before a vault becomes autonomous, the user must define:
 - strategy mandate
 - emergency shutdown preference
 - profit sweep preference
-- IU runtime budget
+- IU service budget
+- Compute Token runtime budget
 
 ## Mandate Templates
 

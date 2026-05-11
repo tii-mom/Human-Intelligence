@@ -76,7 +76,7 @@ The runtime can allow temporary task-specific overrides only when:
 
 - the task is non-vault and low risk
 - the context budget remains safe
-- IU budget is sufficient
+- Compute Token budget is sufficient
 - there is no permission conflict
 - the extra skill has a clear expected value thesis
 
@@ -133,7 +133,8 @@ Examples:
 
 Runtime should track:
 
-- IU spent on the skill
+- IU spent on the skill license, subscription, or service settlement
+- Compute Tokens spent during skill learning and runtime
 - outputs produced
 - revenue generated
 - estimated USDC saved or earned
@@ -158,7 +159,7 @@ Skills should reinforce specialization:
 - Trading and execution agents install routing, TWAP, slippage, liquidity, and protection skills.
 - Risk management agents install drawdown, exposure, volatility, stress test, and veto skills.
 - Compliance and control agents install license validation, permission checking, audit, and policy skills.
-- Treasury and settlement agents install IU budgeting, x402 billing, settlement, and revenue split skills.
+- Treasury and settlement agents install IU budgeting, Compute Token metering, x402 billing, settlement, and revenue split skills.
 - Operations and data agents install normalization, reconciliation, monitoring, and feed quality skills.
 - Client and reporting agents install explanation, education, localization, voice, and Telegram skills.
 - Marketplace and governance agents install curation, reputation, dispute review, and proposal summary skills.
@@ -185,7 +186,8 @@ Execution authority still requires:
 - user approval or standing permission
 - graduation certificate for autonomous vault operation
 - Agent Vault capacity
-- IU runtime budget
+- IU subscription or service budget
+- Compute Token runtime budget
 - USDC trading capacity
 - Risk Guard approval
 - role and license compatibility

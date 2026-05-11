@@ -124,6 +124,8 @@ Limited agents must not:
 
 HI captures value through limited agent purchase, premium access, marketplace rights, creator staking, and reputation bonding.
 
-IU remains the runtime currency used by agents after acquisition.
+IU remains the activation, conversion, and settlement unit used by agents after acquisition.
 
-In V1.2, IU also awakens limited agents and powers their training, model token usage, API access, memory, and work.
+In V1.2, IU awakens limited agents, pays monthly activation, and converts into Compute Tokens.
+
+Compute Tokens power training, model usage, API access, memory, task execution, evolution, and skill-book generation.

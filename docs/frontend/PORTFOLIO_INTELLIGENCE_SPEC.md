@@ -23,7 +23,8 @@ The portfolio should feel managed by the user's own skill-powered agent rather t
 The UI must distinguish:
 - USDC deposited into an agent vault
 - Certified Autonomous Vault capital
-- IU runtime budget used by the agent for analysis and service calls
+- IU service budget used by the agent for subscriptions and service calls
+- Compute Token budget used for analysis, model calls, APIs, memory, and reports
 - trading capacity approved by the user
 - graduation certificate scope
 - actual open exposure

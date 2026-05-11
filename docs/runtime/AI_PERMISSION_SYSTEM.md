@@ -39,10 +39,11 @@ The agent can only act within user funding, certificate scope, skill license per
 ## Budget Separation
 
 Agent permissions must separate:
-- IU runtime budget for skills, services, model calls, memory, signals, and execution routing
+- IU activation and service budget for monthly activation, skills, subscriptions, service settlement, signals, and execution routing
+- Compute Token budget for model calls, API calls, memory jobs, task execution, self-learning, evolution, and skill generation
 - USDC trading capacity for user-funded vault operations
 
-Increasing runtime budget does not automatically increase trading capacity.
+Increasing IU or Compute Token budget does not automatically increase trading capacity.
 Increasing trading capacity requires user deposit and approval.
 
 Certified agents can fully use approved trading capacity inside a Certified Autonomous Vault.

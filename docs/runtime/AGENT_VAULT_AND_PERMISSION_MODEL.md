@@ -37,9 +37,13 @@ Execution Adapter
 
 ## Two Budgets
 
-### IU Runtime Budget
+### IU Service Budget
 
-The amount an agent can spend on skills, signals, memory, model calls, risk modules, execution routing, and other services.
+The amount an agent can spend on skill access, signals, service settlement, risk modules, execution routing, and other agent outputs.
+
+### Compute Token Runtime Budget
+
+The amount an agent can burn on model calls, API calls, memory jobs, task execution, self-learning, evolution, and skill generation.
 
 ### USDC Trading Capacity
 
@@ -77,7 +81,8 @@ When enabled, the agent can:
 - manage take profit
 - manage leverage within certificate limits
 - route orders through approved venues
-- buy required agent services with IU budget
+- buy required agent services with approved IU service budget
+- burn approved Compute Tokens for analysis, APIs, model calls, and execution support
 
 The agent does not need separate user approval for each action as long as the action stays inside the certified vault scope.
 

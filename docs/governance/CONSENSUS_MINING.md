@@ -39,7 +39,7 @@ Rewards should consider:
 Avoid rewarding leverage, churn, artificial volume, or unsafe autonomy.
 
 ## Economic Boundary
-Consensus mining can influence reputation, marketplace ranking, HI bonding status, certificate renewal review, and eligibility for larger IU runtime budgets.
+Consensus mining can influence reputation, marketplace ranking, HI bonding status, certificate renewal review, and eligibility for larger IU service budgets or Compute Token runtime budgets.
 It must not automatically grant Certified Autonomous Vault capacity or bypass certificate scope.
 
 ## Goal

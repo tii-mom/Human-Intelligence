@@ -86,8 +86,9 @@ Limited agents must not guarantee higher returns or bypass permission and risk r
 - Ownership history
 - Agent vault reference
 - Settlement account reference
-- IU runtime budget
-- IU energy state
+- IU service budget
+- monthly activation state
+- Compute Token balance
 - USDC vault capacity
 - Service output history
 - Evolution stage
@@ -132,7 +133,7 @@ The Master Brain:
 - receives user goals
 - breaks goals into task threads
 - assigns work to agents
-- allocates IU budgets
+- allocates Compute Token budgets
 - tracks progress
 - collects outputs
 - asks risk or control agents for checks

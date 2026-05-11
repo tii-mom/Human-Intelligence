@@ -12,7 +12,9 @@ V1.2 defines the shared source of truth for:
 - unlimited limited robot ownership
 - IU activation before full limited robot stats are revealed
 - pet-style robot growth and evolution
-- IU-powered learning, API use, model token use, memory, and work
+- 9.99 IU monthly activation per active robot
+- 1 IU = 10,000,000 Compute Tokens
+- Compute Tokens for learning, API use, model use, memory, work, evolution, and skill generation
 - active skill limits
 - maximum 50 active working robots per user
 - required Master Brain when more than 5 robots work at once
@@ -94,7 +96,8 @@ V1.2 defines the shared source of truth for:
 - Ownership and transfer history
 - Role specialization
 - Output quality history
-- IU runtime budget growth
+- IU service budget growth
+- Compute Token runtime budget growth
 - USDC vault capacity growth
 
 ### 7. Agent Build Marketplace
@@ -106,7 +109,8 @@ V1.2 defines the shared source of truth for:
 
 ### 8. Agent Vault and Permissions
 - USDC vault deposit
-- IU runtime budget allocation
+- IU service budget allocation
+- Compute Token runtime budget allocation
 - Certified Autonomous Vault activation
 - Graduation certificate binding
 - Max position size
@@ -130,6 +134,9 @@ V1.2 defines the shared source of truth for:
 - x402 integration
 - Base settlement
 - Agent-to-agent payments
+- 9.99 IU monthly robot activation
+- IU to Compute Token conversion
+- Compute Token metering for task, API, model, memory, evolution, and skill-generation work
 - Runtime billing
 - Skill subscriptions
 - Skill buyouts

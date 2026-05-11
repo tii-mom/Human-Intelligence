@@ -12,11 +12,12 @@ The MVP proves the product loop:
 2. User gives the agent a name.
 3. System generates the agent core document workspace.
 4. User binds Telegram or WeChat.
-5. User allocates or previews IU energy for the agent.
-6. Agent sends its first greeting.
-7. User chats with the agent and sends commands.
-8. Agent installs starter skills, builds memory, and shows a scorecard.
-9. User sees risk and vault previews before any real capital authority exists.
+5. User activates the agent with 9.99 IU/month or previews activation.
+6. User converts IU into Compute Tokens for paid work.
+7. Agent sends its first greeting.
+8. User chats with the agent and sends commands.
+9. Agent installs starter skills, builds memory, and shows a scorecard.
+10. User sees risk and vault previews before any real capital authority exists.
 
 ## MVP User Flow
 
@@ -100,10 +101,12 @@ The frontend and backend should agree on this minimum shape:
   "primaryRole": "News Intelligence Agent",
   "lifecycleStatus": "active",
   "growthStage": "young",
-  "iuEnergy": {
+  "runtime": {
     "state": "preview",
-    "availableIu": 0,
-    "dailyLimitIu": 0
+    "monthlyActivationIu": 9.99,
+    "monthlyActivationStatus": "inactive",
+    "computeTokenBalance": 0,
+    "dailyComputeTokenLimit": 0
   },
   "boundChannels": ["telegram"],
   "activeChannel": "telegram",
@@ -118,6 +121,7 @@ The frontend and backend should agree on this minimum shape:
     "returnRate": "simulation only",
     "maxDrawdown": "not live",
     "winRate": "not live",
+    "computeTokensSpent": 0,
     "iuSpent": 0,
     "iuEarned": 0,
     "usdcPnl": 0
@@ -282,19 +286,26 @@ IU:
 
 - agent runtime settlement
 - limited agent awakening
+- robot monthly activation
+- compute-token conversion
 - skill usage
-- model token usage
 - API access
 - service billing
 - memory rental
 - signal subscription
 - execution/risk service purchase
 
-MVP may show IU budget previews.
+Compute Tokens:
+
+- 1 IU = 10,000,000 Compute Tokens
+- robots spend Compute Tokens on model calls, API calls, memory jobs, reports, training, task execution, evolution, and skill-book generation
+- daily conversation is included in active monthly activation
+
+MVP may show activation and compute-token budget previews.
 
 MVP must not present IU as a retail speculative asset.
 
-MVP should describe IU simply as agent energy for waking, learning, thinking, and working.
+MVP should describe IU simply as the robot activation and settlement unit, and Compute Tokens as the robot's work fuel.
 
 ## Not In MVP
 

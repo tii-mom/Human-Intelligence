@@ -46,7 +46,7 @@ Advanced modules can remain available behind detail views:
 
 The default user path should be:
 
-Pick robot -> feed IU -> learn skill -> send to work -> see result -> evolve.
+Pick robot -> activate with IU -> allocate Compute Tokens -> learn skill -> send to work -> see result -> evolve.
 
 The frontend should hide role, memory, permission, settlement, and backend complexity until the user asks for details.
 
@@ -57,7 +57,8 @@ Robot cards should show:
 - rarity
 - edition number if limited
 - top attributes
-- IU energy
+- monthly activation state
+- Compute Token balance
 - active job
 - earning status
 - next evolution requirement

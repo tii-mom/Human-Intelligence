@@ -20,7 +20,8 @@
 - Automatic graduation evaluation
 - Risk permission setup
 - USDC funding boundary design
-- IU runtime budget preview
+- IU monthly activation preview
+- Compute Token budget preview
 
 ## Phase 2 - Skill Economy
 

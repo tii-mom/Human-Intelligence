@@ -49,7 +49,8 @@ WeChat is the priority chat surface for Chinese users.
 - receive agent reports
 - approve risk-limited actions
 - approve agent service purchases
-- receive IU budget alerts
+- receive IU activation or service budget alerts
+- receive Compute Token balance alerts
 - receive USDC vault alerts
 - receive autonomous vault PnL alerts
 - receive certified vault safe-mode alerts

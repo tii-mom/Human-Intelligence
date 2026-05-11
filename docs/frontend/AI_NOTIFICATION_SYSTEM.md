@@ -9,7 +9,7 @@ User-owned agents proactively report skill, growth, risk, and market activity.
 - Consensus approvals
 - Position updates
 - Robot awakened
-- IU energy low
+- Compute Token balance low
 - Training started
 - Training completed
 - Evolution requirement met
@@ -22,7 +22,8 @@ User-owned agents proactively report skill, growth, risk, and market activity.
 - Agent level changes
 - Build changes
 - Resale or listing events
-- IU runtime budget usage
+- IU activation and settlement usage
+- Compute Token budget usage
 - USDC vault limit changes
 - Agent service purchases
 - Agent output sales

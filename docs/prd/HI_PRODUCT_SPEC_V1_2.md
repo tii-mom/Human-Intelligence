@@ -12,7 +12,7 @@ This document supersedes `docs/prd/HI_PRODUCT_SPEC_V1_1.md` for product rules th
 
 - free agent claim limits
 - limited agent ownership and activation
-- IU-powered training and runtime
+- IU subscription and compute-token runtime
 - pet-style growth and evolution
 - active skill limits
 - multi-agent work limits
@@ -32,7 +32,8 @@ HI is a financial agent cultivation game and operating system.
 The user should feel:
 
 I own a rare agent.
-I feed it IU.
+I activate it with IU.
+I give it compute tokens to work.
 I teach it skills.
 It evolves.
 It works for me.
@@ -62,15 +63,25 @@ If a purchase, skill, activation, or runtime action does not improve one of thes
 | Asset | Human meaning | Product use |
 | --- | --- | --- |
 | HI | Ownership, scarcity, premium access, reputation, bonding | limited agent purchase, premium rights, fund bonding, ecosystem identity |
-| IU | Agent energy and runtime credit | activation, skill learning, model tokens, API access, memory, reports, data, execution analysis, agent-to-agent services |
+| IU | Billing, subscription, and settlement unit | robot monthly activation, limited-agent awakening, skill purchases, service settlement, compute-token conversion |
+| Compute Tokens / suanli points | Metered runtime fuel | model calls, API calls, memory jobs, task execution, self-learning, evolution, skill generation |
 
-IU should feel like the agent's energy bar.
+IU should feel like the user's simple payment and activation unit.
 
 Users can understand it simply:
 
-Your robot needs IU to wake up, learn, think, call APIs, and work.
+Your robot needs an active 9.99 IU monthly activation to stay awake.
+When it actually works, learns, evolves, calls APIs, or produces skills, it burns compute tokens.
 
-Advanced users can still see token, model, API, and service cost details.
+Default conversion:
+
+```text
+1 IU = 10,000,000 compute tokens
+```
+
+Use the user-facing label `Compute Tokens` or `suanli points` instead of raw model-token language.
+
+Advanced users can still see model, API, and service cost details.
 
 ## 1. Agent Ownership Rules
 
@@ -88,7 +99,7 @@ The free Blank Agent starts as an undeveloped young agent:
 - limited active skill slots
 - no autonomous trading authority
 - no live money-making ability until trained
-- can become valuable through IU-funded learning, skills, memory, and operating history
+- can become valuable through monthly activation, compute-token-funded learning, skills, memory, and operating history
 
 ### Limited Agent Rule
 
@@ -169,7 +180,8 @@ The frontend should expose only the most important growth surfaces:
 - top two attributes
 - Growth Potential
 - active skill slots
-- IU energy
+- monthly activation state
+- compute-token balance
 - current job
 - next evolution requirement
 - value score
@@ -179,7 +191,8 @@ The frontend should expose only the most important growth surfaces:
 
 Evolution should require a mix of:
 
-- IU spent on learning or runtime
+- active 9.99 IU monthly activation
+- compute tokens spent on useful learning or runtime
 - role-compatible skills
 - memory milestones
 - output quality
@@ -241,16 +254,96 @@ Skill purchase and activation must show a value reason:
 - helps remember and adapt
 - helps coordinate other agents
 
-## 4. IU Runtime and API Consumption
+### Skill Book Economy
 
-IU is required for meaningful agent operation.
+The user-facing marketplace should stay simple:
 
-IU pays for:
+| User-facing tier | Internal use |
+| --- | --- |
+| Basic Skill Book | starter and low-risk skills |
+| Advanced Skill Book | stronger role, data, model, or service skills |
+| Expert Skill Book | certification-grade, vault-grade, or fund-grade skills |
+
+The existing starter, advanced, and certification skill taxonomy remains valid internally.
+
+Platform skills can be sold as fixed official skill books.
+
+Trained robots can also produce skill books when they have:
+
+- active monthly activation
+- enough compute tokens
+- role-compatible installed skills
+- useful work evidence
+- no private owner data leakage
+- no hidden strategy disclosure
+
+When a robot produces a skill book, it enters the user's backpack.
+
+The user can install it, hold it, or list it for sale.
+
+Default user skill-book marketplace split:
+
+- 8% platform fee
+- 92% to the producing robot owner
+
+Spending compute tokens alone must not guarantee skill production.
+
+The robot must create a useful, validated output.
+
+## 4. IU Subscription and Compute Token Runtime
+
+IU is required for meaningful robot operation, but IU should not be presented as a raw model-token meter.
+
+Canonical rule:
+
+```text
+1 IU = 10,000,000 compute tokens
+```
+
+IU is the billing, subscription, and settlement unit.
+
+Compute Tokens are the metered runtime fuel.
+
+### Monthly Robot Activation
+
+Each active robot requires:
+
+```text
+9.99 IU per month
+```
+
+The monthly activation:
+
+- keeps the robot awake for work
+- unlocks normal daily conversation
+- enables skill learning eligibility
+- enables self-learning eligibility
+- enables task execution eligibility
+- enables evolution eligibility
+- activates full stats display for limited robots after awakening
+
+Daily conversation should be included in the monthly activation and should not ask the user for extra compute-token approval.
+
+High-cost reports, deep research, API-heavy analysis, self-learning, task execution, evolution, skill production, and Master Brain orchestration consume compute tokens from the user's balance.
+
+If the monthly activation expires, the robot becomes dormant:
+
+- ownership remains
+- memory remains
+- public profile remains
+- daily work stops
+- self-learning stops
+- evolution stops
+- paid tasks cannot start
+
+### What Burns Compute Tokens
+
+Compute tokens pay for:
 
 - awakening limited agents
 - skill learning
 - active skill runtime
-- model token usage
+- model usage
 - exchange, market data, news, on-chain, or social API access
 - memory compression and retrieval
 - reports and backtests
@@ -258,24 +351,55 @@ IU pays for:
 - risk checks
 - agent-to-agent service purchases
 - Master Brain orchestration
+- self-learning
+- evolution attempts
+- skill-book generation
+
+### Evolution Cost Rule
+
+Self-learning, evolution, and robot-produced skill books require all of these:
+
+- active 9.99 IU monthly activation
+- enough compute tokens
+- role-compatible skill path
+- useful work, learning, service, or performance evidence
+- no unresolved critical risk event
+
+Do not let spending alone guarantee evolution or valuable skill generation.
+
+Growth must be tied to useful output and risk discipline.
 
 Each active agent should have:
 
-- IU balance or allocated budget
-- daily IU limit
-- per-task IU estimate
+- active monthly status
+- compute-token balance
+- daily compute-token limit
+- per-task compute-token estimate
 - API scopes
 - model tier
-- token budget
-- auto-stop rule when IU is low
+- auto-stop rule when compute tokens are low
 
 The product should show this simply:
 
-- Energy: enough for today
-- Energy: low
-- Energy: paused
+- Active: 9.99 IU/month
+- Compute: enough for today
+- Compute: low
+- Compute: paused
 
-Advanced views can show token and API itemization.
+Advanced views can show IU conversion, model, API, memory, and service itemization.
+
+### Budget Protection Rules
+
+Every robot must support:
+
+- daily compute-token cap
+- per-task estimate before paid work
+- self-learning on/off switch
+- low-balance auto-pause
+- high-cost confirmation
+- API scope limits
+- Master Brain total budget cap
+- refund or reversal policy for failed platform-side jobs when applicable
 
 ## 5. Money-Making Activation
 
@@ -286,15 +410,16 @@ Money-making ability must be earned.
 Default path:
 
 1. Claim or awaken agent.
-2. Recharge or allocate IU.
-3. Bind Telegram or WeChat.
-4. Learn starter skills.
-5. Complete simulation tasks.
-6. Learn money, risk, or service skills.
-7. Enter Trial stage.
-8. Operate 100 USDC probation vault or service trial.
-9. Pass automatic graduation.
-10. Activate Certified Autonomous Vault or publish paid services.
+2. Pay or renew 9.99 IU monthly activation.
+3. Convert IU into compute tokens.
+4. Bind Telegram or WeChat.
+5. Learn starter skills.
+6. Complete simulation tasks.
+7. Learn money, risk, or service skills.
+8. Enter Trial stage.
+9. Operate 100 USDC probation vault or service trial.
+10. Pass automatic graduation.
+11. Activate Certified Autonomous Vault or publish paid services.
 
 This keeps the user promise honest:
 
@@ -309,7 +434,8 @@ Rules:
 - One user can have at most 50 agents working at the same time.
 - The free agent counts toward the active working limit.
 - Dormant, sealed, listed, or inactive agents do not count.
-- Each active working agent needs IU budget.
+- Each active working agent needs active monthly activation.
+- Each active working agent needs compute-token budget.
 - Each active working agent needs a job, role, or mandate.
 
 ### More Than 5 Active Agents
@@ -323,7 +449,7 @@ The Master Brain:
 - receives user goals
 - decomposes work into task threads
 - assigns work to agents
-- allocates IU budgets
+- allocates compute-token budgets
 - tracks progress
 - collects outputs
 - asks risk/control agents for checks
@@ -355,7 +481,7 @@ Each task thread should track:
 - assigned agent
 - objective
 - expected output
-- IU budget
+- compute-token budget
 - status
 - progress
 - blockers
@@ -372,7 +498,7 @@ Progress states:
 - waiting for user confirmation
 - completed
 - failed
-- paused for low IU
+- paused for low compute tokens
 
 ## 8. User Feedback Rules
 
@@ -390,7 +516,7 @@ Default feedback:
 - job started
 - meaningful progress
 - blocker
-- IU low
+- compute tokens low
 - risk warning
 - task completed
 - daily summary
@@ -413,7 +539,7 @@ Avoid making users manage every technical subsystem directly.
 
 Advanced users can open detailed views, but the default path should be:
 
-Pick robot -> feed IU -> learn skill -> send to work -> see result -> evolve.
+Pick robot -> activate with IU -> allocate compute tokens -> learn skill -> send to work -> see result -> evolve.
 
 ### Robot Card
 
@@ -424,7 +550,8 @@ Each robot card should show:
 - rarity
 - edition number if limited
 - top attributes
-- IU energy
+- monthly activation state
+- compute-token balance
 - active job
 - earning status
 - next evolution
@@ -437,7 +564,7 @@ The Master Brain view should show:
 - user goal
 - active task threads
 - worker agents
-- IU budget usage
+- compute-token budget usage
 - progress
 - blockers
 - next report time
@@ -449,11 +576,12 @@ After V1.2, subsystem docs should align to these product rules:
 - one free agent per user
 - unlimited limited-agent holding
 - IU activation required to reveal full limited-agent stats
-- IU as energy for learning, token use, API use, and work
+- 9.99 IU monthly activation per active robot
+- 1 IU = 10,000,000 compute tokens
+- compute tokens as runtime fuel for learning, model use, API use, memory, tasks, evolution, and skill generation
 - pet-style growth and evolution
 - active skill limits
 - maximum 50 active working agents per user
 - more than 5 active working agents require a Master Brain
 - Master Brain coordinates worker agents through task threads
 - Telegram and WeChat are primary progress channels
-

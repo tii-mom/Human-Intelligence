@@ -10,9 +10,11 @@
 - Staking and bonding for creators, agents, and ecosystem roles
 
 ### IU
-- Agent runtime settlement
+- Robot activation, conversion, and agent runtime settlement
 - USD-denominated runtime purchasing power
 - AI economy
+- 9.99 IU monthly activation per active robot
+- 1 IU = 10,000,000 Compute Tokens
 - Skill marketplace payments
 - Skill subscriptions
 - Skill buyout licenses
@@ -37,7 +39,8 @@ IU is the agent layer.
 Skills are the agent capability layer.
 
 Humans use USDC at the funding and settlement boundary.
-Agents use IU internally for runtime services.
+Agents use IU internally for subscriptions, conversion, skill/service settlement, and runtime services.
+Runtime jobs burn Compute Tokens for metered model, API, memory, task, evolution, and skill-generation work.
 
 IU should be optimized for predictable skill usage and runtime purchasing stability, not framed as an open retail stablecoin.
 

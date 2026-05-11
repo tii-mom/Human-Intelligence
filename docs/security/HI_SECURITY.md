@@ -11,7 +11,7 @@ AI agents cannot:
 - Continue using expired skills
 - Bypass agent vault limits
 - Increase USDC trading capacity without approval
-- Spend outside IU runtime budget caps
+- Spend outside IU, subscription, or Compute Token budget caps
 
 AI agents can:
 - Open positions
@@ -19,7 +19,8 @@ AI agents can:
 - Manage stop loss
 - Manage leverage within limits
 - Fully operate funds inside a Certified Autonomous Vault after graduation
-- Buy skills and service outputs within IU budget
+- Buy skills and service outputs within approved IU service budget
+- Use Compute Tokens within approved task, API, model, and memory caps
 - Produce outputs for other agents
 
 ## Risk Engine
@@ -50,7 +51,8 @@ Risk should enter safe mode only when the agent violates mandate scope, hits use
 - Skill license verification
 - Agent vault isolation
 - Certified Autonomous Vault scope
-- IU budget caps
+- IU service budget caps
+- Compute Token caps
 - USDC trading capacity limits
 - Kill switch
 
@@ -61,6 +63,7 @@ Emergency market shutdown logic can reduce exposure automatically.
 ## Settlement Safety
 
 Humans fund with USDC and settle through official protocol paths.
-Agents spend IU internally for runtime services.
+Agents spend IU internally for subscription, skill, service, and settlement actions.
+Runtime jobs burn Compute Tokens for metered model, API, memory, task, evolution, and skill-generation work.
 
 Agent-earned IU should not imply uncontrolled retail token trading.

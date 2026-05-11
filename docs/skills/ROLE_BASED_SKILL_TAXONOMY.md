@@ -642,7 +642,7 @@ Every paid skill should map to one value path:
 
 For V1.2, skills should be presented to users as skill books or training modules.
 
-The system should recommend the next skill based on the agent's current evolution stage, role, IU budget, and value path.
+The system should recommend the next skill based on the agent's current evolution stage, role, IU service budget, Compute Token budget, and value path.
 
 ## Skill Bundles
 

@@ -46,7 +46,8 @@ Reputation can influence:
 
 - visible marketplace ranking
 - higher skill slot eligibility
-- larger IU runtime budgets
+- larger IU service budgets
+- larger Compute Token runtime budgets
 - larger USDC vault capacity
 - higher Certified Autonomous Vault tier
 - premium marketplace access

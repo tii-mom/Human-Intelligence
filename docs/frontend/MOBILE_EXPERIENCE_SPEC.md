@@ -33,7 +33,8 @@ WeChat is the priority channel for Chinese users.
 - review graduation certificate progress
 - activate Certified Autonomous Vault
 - approve skill or service purchases
-- monitor IU runtime budget
+- monitor IU activation and service budget
+- monitor Compute Token balance
 - monitor USDC vault capacity
 - monitor autonomous vault PnL
 - receive risk warnings

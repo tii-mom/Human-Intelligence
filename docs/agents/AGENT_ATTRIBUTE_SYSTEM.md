@@ -139,7 +139,8 @@ The user-facing card should show:
 - top two attributes
 - Growth Potential
 - active skill slots
-- IU energy
+- monthly activation state
+- Compute Token balance
 - next evolution requirement
 
 The product should not force normal users to inspect every underlying attribute unless they want detail.

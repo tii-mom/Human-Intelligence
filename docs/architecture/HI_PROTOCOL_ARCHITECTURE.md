@@ -44,12 +44,14 @@ The detailed v1.1 product and integration contract remains `docs/prd/HI_PRODUCT_
 
 ## Payments
 - x402
-- IU as agent runtime settlement asset
+- IU as robot activation, conversion, and agent settlement unit
+- Compute Tokens as metered runtime fuel
 - USDC as the human funding and owner settlement boundary
 
 ## Economic Layers
 - HI: human-facing governance, identity, reputation, premium access, and agent ownership coordination
-- IU: agent-facing skill settlement, billing, routing, and runtime payments
+- IU: agent-facing skill settlement, billing, routing, subscription, and conversion
+- Compute Tokens: metered model, API, memory, task, evolution, and skill-generation fuel
 - USDC: user deposits, agent vault funding, and owner settlement
 - Blank Agent: user-owned agent identity and growth container
 - Limited Agent: HI-purchased scarce agent identity and starter archetype
@@ -66,7 +68,8 @@ The detailed v1.1 product and integration contract remains `docs/prd/HI_PRODUCT_
 - Graduation certificate registry
 - Permission manager
 - Risk guard
-- IU runtime budget
+- IU subscription and service budget
+- Compute Token runtime budget
 - USDC trading capacity
 - Certificate-bound execution scope
 

@@ -19,7 +19,8 @@ Execute agent actions safely and efficiently after skill, certificate, risk, vau
 - Position management line checks
 - Asset and venue whitelist checks
 - USDC trading capacity checks
-- IU runtime budget checks for execution service fees
+- IU service budget checks for execution service fees
+- Compute Token budget checks for model, API, and routing work
 
 ## Exchanges
 - Binance

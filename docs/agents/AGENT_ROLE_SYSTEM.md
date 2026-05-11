@@ -332,7 +332,7 @@ These agents manage budgets, runtime spending, and settlement accounting.
 Roles:
 
 - Treasury Agent
-- IU Budget Agent
+- Runtime Budget Agent
 - Billing Agent
 - Settlement Agent
 - Revenue Split Agent
@@ -340,7 +340,8 @@ Roles:
 
 Typical skills:
 
-- IU budget planning
+- IU service budget planning
+- Compute Token budget planning
 - service cost estimation
 - x402 billing monitoring
 - marketplace fee calculation
