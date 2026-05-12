@@ -8,7 +8,9 @@ For a short implementation-facing summary, start with `docs/prd/HI_PRODUCT_RULES
 
 For the MVP first-user flow, start with `docs/prd/MVP_USER_JOURNEY_V1_2.md`.
 
-Use it first when updating product, frontend, backend, agent, skill, vault, memory, or integration behavior.
+For engineering breakdown, use `docs/prd/HI_CORE_IMPLEMENTATION_BACKLOG_V1_2.md`.
+
+Use `HI_PRODUCT_SPEC_V1_2.md` first when updating product, frontend, backend, agent, skill, vault, memory, or integration behavior.
 
 V1.2 defines:
 
@@ -29,6 +31,7 @@ V1.2 defines:
 - `docs/prd/HI_PRODUCT_SPEC_V1_2.md` - current product and robot cultivation source
 - `docs/prd/HI_PRODUCT_RULES_V1_2.md` - short V1.2 product rules for implementation and communication
 - `docs/prd/MVP_USER_JOURNEY_V1_2.md` - first 5-minute MVP user journey
+- `docs/prd/HI_CORE_IMPLEMENTATION_BACKLOG_V1_2.md` - hi / hi-core implementation backlog
 - `docs/prd/HI_PRODUCT_SPEC_V1_1.md` - detailed role, skill, vault, memory, and integration reference
 - `docs/prd/HI_PROTOCOL_PRD.md` - module-level PRD
 - `MVP_PRODUCT_SPEC.md` - MVP scope and non-live trading boundary

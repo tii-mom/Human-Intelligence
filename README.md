@@ -120,6 +120,7 @@ The system model:
 - `docs/prd/HI_PRODUCT_SPEC_V1_2.md`
 - `docs/prd/HI_PRODUCT_RULES_V1_2.md`
 - `docs/prd/MVP_USER_JOURNEY_V1_2.md`
+- `docs/prd/HI_CORE_IMPLEMENTATION_BACKLOG_V1_2.md`
 - `docs/prd/HI_PRODUCT_SPEC_V1_1.md`
 - `MVP_PRODUCT_SPEC.md`
 - `docs/agents/BLANK_AGENT_PRODUCT_LOOP.md`
