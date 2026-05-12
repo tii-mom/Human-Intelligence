@@ -53,7 +53,8 @@ claimed
   -> named
   -> documents_created
   -> channel_bound
-  -> iu_allocated
+  -> monthly_activation_ready
+  -> compute_tokens_allocated
   -> active
   -> learning
   -> certified
@@ -68,7 +69,8 @@ MVP required states:
 - `named`
 - `documents_created`
 - `channel_bound`
-- `iu_allocated`
+- `monthly_activation_ready`
+- `compute_tokens_allocated`
 - `active`
 - `learning`
 
